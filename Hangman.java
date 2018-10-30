@@ -31,12 +31,17 @@
             System.out.println("       2. Short game");
             System.out.println("       3. Medium game");
             System.out.println("       4. Long game");
+            System.out.println("       5. High Scores");
             s1 = input.nextLine();// Should replace with IR4 and require a input
 
             //skip the next section if it is quick game
             if(s1.equals("1")){
                 s2 = "1";
-            }else {
+            } 
+            else if(s1.equals("5")) {
+                    s2 = "1";            
+            } 
+            else {
             System.out.println("Please select an theme option:");
             System.out.println("       1. Theme 1");
             System.out.println("       2. Theme 2");
@@ -44,6 +49,11 @@
             s2 = input.nextLine();// Should replace with IR4
             }
             
+            //Call highScores
+            if(s1.equals("5")){
+                highScores();
+            }
+            else{
             //set the game type into the array
             gameType[0] = Integer.parseInt(s1); 
             gameType[1] = Integer.parseInt(s2);
@@ -51,7 +61,11 @@
             // Verify the choices made
             System.out .println("gameType[0] " + gameType[0] );
             System.out .println("gameType[1] " + gameType[1] );
-
+            }//end of highScores check
         }//end of menu method
+
+        public static void highScores(){//stub
+            System.out .println("High Scores!" );
+        }//end of highScores
 
     }//end of Hangman class
