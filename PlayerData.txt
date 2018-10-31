@@ -1,0 +1,14 @@
+*****************************************************
+* Honest Hangman 1.0
+* Authors: Michael Bennett, John Gumm, Victoria Isles
+* Add as many lines of comments as you want...
+*****************************************************
+>>> Global Settings >>>
+The 1st setting would go here...
+The 2nd setting would go here...
+>>> End of Global Settings >>>
+===== Player#0 =====
+Test
+0
+0
+--- End of File ---

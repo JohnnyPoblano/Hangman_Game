@@ -5,7 +5,7 @@ import java.io.*;
 
 public class ProjectFileIO {
     //Global Constants
-    private static String FILE_NAME = "FileTest-1.txt";
+    private static String FILE_NAME = "PlayerData.txt";
     
     private static String EOF_MARKER             = "-";
     private static String PLAYER_MARKER          = "=";
@@ -30,7 +30,11 @@ public class ProjectFileIO {
 
     public static void main(String[] args) throws IOException {
         readFile();   
-        writeFile(); 
+        //writeFile();
+        String name = playerArray[0].getName();
+        int highScore = playerArray[0].getHighScore();
+        System.out.println("Player name: " + name);
+        System.out.println("Player high score: " + highScore);
     }
     
     //================================================================================================================
@@ -165,11 +169,11 @@ public class ProjectFileIO {
     
     //ADJUST AS NECESSARY!
     private static void writeHeaderLines(){
-        pw.println("***********************************");
-        pw.println("* My Game " + getVersionNumber());
-        pw.println("* Authors: ...");
+        pw.println("*****************************************************");
+        pw.println("* Honest Hangman " + getVersionNumber());
+        pw.println("* Authors: Michael Bennett, John Gumm, Victoria Isles");
         pw.println("* Add as many lines of comments as you want...");
-        pw.println("***********************************");
+        pw.println("*****************************************************");
         pw.flush();
     }
     
