@@ -1,26 +1,35 @@
 public class Player {
     
     private String name;
-    private String password;
     private int highScore;
     private int numberOfTimesPlayed;
     
     public Player() { 
-        //no-arg constructor        
+        setName("");
+        setHighScore(0);
+        setNumberOfTimesPlayed(0);        
     }
     
-    public Player(String name, String password, int highScore, int numberOfTimesPlayed) { 
+    public Player(String name, int highScore, int numberOfTimesPlayed) { 
         this.name = name;
-        this.password = password;
         this.highScore = highScore;
         this.numberOfTimesPlayed = numberOfTimesPlayed;
     }
    
+    // Mutator methods
+    public void setName(String x){
+        this.name = x;
+    }
+    public void setHighScore (int x){
+        this.highScore = x;
+    }
+    public void setNumberOfTimesPlayed(int x){
+        this.numberOfTimesPlayed = x;
+    }
+
+    // Accessor methods
     public String getName(){
         return name;
-    }
-    public String getPassword(){
-        return password;
     }
     public int getHighScore (){
         return highScore;

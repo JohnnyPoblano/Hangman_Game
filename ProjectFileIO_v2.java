@@ -2,10 +2,11 @@
   * ProjectFileIO.java
   *********************************************************************************************************************/
 import java.io.*;
+import java.util.*;
 
-public class ProjectFileIO {
+public class ProjectFileIO_v2 {
     //Global Constants
-    private static String FILE_NAME = "PlayerData.txt";
+    private static String FILE_NAME = "FileTest-1.txt";
     
     private static String EOF_MARKER             = "-";
     private static String PLAYER_MARKER          = "=";
@@ -22,25 +23,20 @@ public class ProjectFileIO {
     private static PrintWriter pw;
     
     //Data related to the Player objects
-    private static int MAX_PLAYERS = 100;
-    private static int playerCount = 0;
-    private static Player playerArray [] = new Player[MAX_PLAYERS];
+    private static ArrayList<Player> playerArrayList = new ArrayList<Player>();
 
     //================================================================================================================
 
     public static void main(String[] args) throws IOException {
         readFile();   
-        //writeFile();
-        String name = playerArray[0].getName();
-        int highScore = playerArray[0].getHighScore();
-        System.out.println("Player name: " + name);
-        System.out.println("Player high score: " + highScore);
+        writeFile(); 
     }
     
     //================================================================================================================
     
     public static void readFile() throws IOException {
         System.out.println("Reading File...\n");
+        playerArrayList.clear();
         try {
             boolean keepGoing = true;
             
@@ -87,16 +83,16 @@ public class ProjectFileIO {
             br.close();       
         }
         catch (FileNotFoundException e) {
-            System.out.println(FILE_NAME + " not found. Creating new file.");
-            writeNewPlayer(0, "Test", 0, 0);
+            System.out.println(FILE_NAME + " not found. Creating new file with sample player data.");
+            writeNewPlayer("Test", "pw123", 0, 0);
                 
             writeFile();
-            readFile();
+            //readFile();
         }
         catch (EOFException e) {
             System.out.println("Unexpected End of File found");
         }
-         catch (Exception e) {
+        catch (Exception e) {
             System.out.println("Unexpected Exception found");
         }
     }
@@ -114,20 +110,22 @@ public class ProjectFileIO {
         //Get 1st line. 
         String name = getLine();
         
-        //Get 2nd line
-        String highScoreString = getLine();
+        //Get 2nd line. 
+        String password = getLine();
         
         //Get 3rd line
+        String highScoreString = getLine();
+        
+        //Get 4th line
         String numberOfTimesPlayedString = getLine();
         
-        writeNewPlayer(playerCount, name, Integer.parseInt(highScoreString), Integer.parseInt(numberOfTimesPlayedString));
-        playerCount++;
+        writeNewPlayer(name, password, Integer.parseInt(highScoreString), Integer.parseInt(numberOfTimesPlayedString));
     }
     
     //ADJUST AS NECESSARY!
-    private static void writeNewPlayer(int index, String name, int highScore, int numberOfTimesPlayed){
-        Player playerNew = new Player(name, highScore, numberOfTimesPlayed);
-        playerArray[index] = playerNew;     
+    private static void writeNewPlayer(String name, String password, int highScore, int numberOfTimesPlayed){
+        Player playerNew = new Player(name, password, highScore, numberOfTimesPlayed);
+        playerArrayList.add(playerNew);
     }
     
     //----------------------------------------------------------------------------------------------------------------
@@ -169,11 +167,11 @@ public class ProjectFileIO {
     
     //ADJUST AS NECESSARY!
     private static void writeHeaderLines(){
-        pw.println("*****************************************************");
-        pw.println("* Honest Hangman " + getVersionNumber());
-        pw.println("* Authors: Michael Bennett, John Gumm, Victoria Isles");
+        pw.println("***********************************");
+        pw.println("* My Game " + getVersionNumber());
+        pw.println("* Authors: ...");
         pw.println("* Add as many lines of comments as you want...");
-        pw.println("*****************************************************");
+        pw.println("***********************************");
         pw.flush();
     }
     
@@ -189,20 +187,19 @@ public class ProjectFileIO {
 
     //ADJUST AS NECESSARY!
     private static void writePlayerLines(){
-        if (playerArray [0] == null) {
-            System.out.println("The playerArray is empty!");
+        if (playerArrayList.size() == 0) {
+            System.out.println("The playerArrayList is empty!");
             return;
         }
         
-        for (int i = 0; i < MAX_PLAYERS; i++){
-            if (playerArray[i] != null){
-                String playerMarker = PLAYER_MARKER + PLAYER_MARKER + PLAYER_MARKER + PLAYER_MARKER + PLAYER_MARKER;
-                pw.println(playerMarker + " Player#" + i + " " + playerMarker);
-                pw.println(playerArray[i].getName());
-                pw.println(playerArray[i].getHighScore());
-                pw.println(playerArray[i].getNumberOfTimesPlayed());
-                pw.flush();
-            }
+        for (int i = 0; i < playerArrayList.size(); i++){
+            String playerMarker = PLAYER_MARKER + PLAYER_MARKER + PLAYER_MARKER + PLAYER_MARKER + PLAYER_MARKER;
+            pw.println(playerMarker + " Player#" + i + " " + playerMarker);
+            pw.println(playerArrayList.get(i).getName());
+            pw.println(playerArrayList.get(i).getPassword());
+            pw.println(playerArrayList.get(i).getHighScore());
+            pw.println(playerArrayList.get(i).getNumberOfTimesPlayed());
+            pw.flush();
         }
     }    
     
@@ -216,11 +213,51 @@ public class ProjectFileIO {
         return VERSION_NUMBER;
     }    
     
-    public static Player[] getPlayerArray(){
-        return playerArray;
+    public static ArrayList getPlayerArrayList(){
+        return playerArrayList;
     }
     
-    public static void setPlayerArray(Player [] newPlayerArray){
-        playerArray = newPlayerArray;
+    public static void setPlayerArrayList(ArrayList<Player> newPlayerArrayList){
+        playerArrayList = newPlayerArrayList;
     }
+    
+    //Returns a Player object
+    public static Player getPlayer(String name, String password){
+       for (int i = 0; i < playerArrayList.size(); i++){
+           if (playerArrayList.get(i).getName().equals(name)
+            && playerArrayList.get(i).getPassword().equals(password))
+           {
+               return playerArrayList.get(i);
+           }
+       }
+       return null; //player was not found
+    }
+    
+    //Finds the specific Player object, deletes it, and adds the new Player object
+    public static void updatePlayer(Player newPlayer){
+        for (int i = 0; i < playerArrayList.size(); i++){
+           if (playerArrayList.get(i).getName().equals(newPlayer.getName())
+            && playerArrayList.get(i).getPassword().equals(newPlayer.getPassword()))
+           {
+               playerArrayList.remove(i);
+               playerArrayList.add(newPlayer); 
+               return;
+           }
+       }
+        System.out.println("Error in updatePlayer. Player not found.");
+        System.exit(-1);
+    }    
+    
+    //Adds the new Player object if there is no duplicate name and password 
+    public static boolean addNewPlayer(Player newPlayer){
+        for (int i = 0; i < playerArrayList.size(); i++){
+           if (playerArrayList.get(i).getName().equals(newPlayer.getName())
+            && playerArrayList.get(i).getPassword().equals(newPlayer.getPassword()))
+           {
+               return false;  //indicates the player could not be added due to a duplcate player name and password. 
+           }
+       }
+        playerArrayList.add(newPlayer); 
+        return true; //the player was added successfully. 
+    }    
 }
