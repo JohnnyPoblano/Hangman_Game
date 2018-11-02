@@ -28,7 +28,56 @@ public class ProjectFileIO_v2 {
     //================================================================================================================
 
     public static void main(String[] args) throws IOException {
-        readFile();   
+        readFile();
+        
+        // Get username input from user
+        String user = IR4.getString("Please enter your username");
+
+        // Create object and add username to it
+        Player newPlayer = new Player();
+        newPlayer.setName(user);
+
+        // Check for user in File
+        boolean userCreated = addNewPlayer(newPlayer);
+
+        //===================== NEW USER ===========================/
+        if (userCreated) {
+            System.out.println("User " + user + " created.");
+            
+            // Get a new password for new user (No spaces and > 8 chars)
+            String newPass = IR4.getString("Please set a password.");
+            while (newPass.length() < 8 || newPass.contains(" ")) {
+                System.out.println("Error. Password must be at least 8 characters long and contain no spaces.");
+                newPass = IR4.getString("Please set a password.");
+            }
+            newPlayer.setPassword(newPass);
+
+            // Update player with new password
+            updatePlayer(newPlayer);
+        }
+        //=================== END NEW USER =========================/
+        
+        //=================== EXISTING USER ========================/
+        if (!userCreated) {
+            System.out.println("User " + user + " found.");
+            
+            // Set existing user to reference variable
+            Player existingPlayer = new Player();
+            for (int i = 0; i < playerArrayList.size(); i++) {
+                if (playerArrayList.get(i).getName().equals(newPlayer.getName())) {
+                    existingPlayer = playerArrayList.get(i);
+                    break;
+                }
+            }
+
+            // Loop for getting correct password
+            String existingPass = IR4.getString("Please enter password for user " + user);
+            while (!existingPass.equals(existingPlayer.getPassword())) {
+                existingPass = IR4.getString("Incorrect password for user " + user + ". Please enter password.");
+            }
+        }
+        //================= END EXISTING USER ======================/
+
         writeFile(); 
     }
     
@@ -168,8 +217,8 @@ public class ProjectFileIO_v2 {
     //ADJUST AS NECESSARY!
     private static void writeHeaderLines(){
         pw.println("***********************************");
-        pw.println("* My Game " + getVersionNumber());
-        pw.println("* Authors: ...");
+        pw.println("* Honest Hangman " + getVersionNumber());
+        pw.println("* Authors: Michael Bennett, John Gumm, Victoria Isles");
         pw.println("* Add as many lines of comments as you want...");
         pw.println("***********************************");
         pw.flush();
@@ -211,7 +260,11 @@ public class ProjectFileIO_v2 {
     
     public static String getVersionNumber() {
         return VERSION_NUMBER;
-    }    
+    }
+    
+    public static String getFileName() {
+        return FILE_NAME;
+    }
     
     public static ArrayList getPlayerArrayList(){
         return playerArrayList;
@@ -252,12 +305,77 @@ public class ProjectFileIO_v2 {
     public static boolean addNewPlayer(Player newPlayer){
         for (int i = 0; i < playerArrayList.size(); i++){
            if (playerArrayList.get(i).getName().equals(newPlayer.getName())
-            && playerArrayList.get(i).getPassword().equals(newPlayer.getPassword()))
+            /*&& playerArrayList.get(i).getPassword().equals(newPlayer.getPassword())*/)
            {
                return false;  //indicates the player could not be added due to a duplcate player name and password. 
            }
        }
         playerArrayList.add(newPlayer); 
         return true; //the player was added successfully. 
-    }    
+    }
+    
+    public static void runFileIO() {
+
+        try {
+            readFile();
+        } catch(IOException io) {
+            System.out.println("IOException " + io.getMessage());
+        }
+        
+        // Get username input from user
+        String user = IR4.getString("Please enter your username");
+
+        // Create object and add username to it
+        Player newPlayer = new Player();
+        newPlayer.setName(user);
+
+        // Check for user in File
+        boolean userCreated = addNewPlayer(newPlayer);
+
+        //===================== NEW USER ===========================/
+        if (userCreated) {
+            System.out.println("User " + user + " created.");
+            
+            // Get a new password for new user (No spaces and > 8 chars)
+            String newPass = IR4.getString("Please set a password.");
+            while (newPass.length() < 8 || newPass.contains(" ")) {
+                System.out.println("Error. Password must be at least 8 characters long and contain no spaces.");
+                newPass = IR4.getString("Please set a password.");
+            }
+            newPlayer.setPassword(newPass);
+
+            // Update player with new password
+            updatePlayer(newPlayer);
+        }
+        //=================== END NEW USER =========================/
+        
+        //=================== EXISTING USER ========================/
+        if (!userCreated) {
+            System.out.println("User " + user + " found.");
+            
+            // Set existing user to reference variable
+            Player existingPlayer = new Player();
+            for (int i = 0; i < playerArrayList.size(); i++) {
+                if (playerArrayList.get(i).getName().equals(newPlayer.getName())) {
+                    existingPlayer = playerArrayList.get(i);
+                    break;
+                }
+            }
+
+            // Loop for getting correct password
+            String existingPass = IR4.getString("Please enter password for user " + user);
+            while (!existingPass.equals(existingPlayer.getPassword())) {
+                existingPass = IR4.getString("Incorrect password for user " + user + ". Please enter password.");
+            }
+        }
+        //================= END EXISTING USER ======================/
+
+        try {
+            writeFile();
+        } catch(IOException io) {
+            System.out.println("IOException " + io.getMessage());
+        }
+
+    }
+    
 }

@@ -1,0 +1,75 @@
+***********************************
+* Honest Hangman 1.0
+* Authors: Michael Bennett, John Gumm, Victoria Isles
+* Add as many lines of comments as you want...
+***********************************
+>>> Global Settings >>>
+The 1st setting would go here...
+The 2nd setting would go here...
+>>> End of Global Settings >>>
+===== Player#0 =====
+Jrgw
+
+0
+0
+===== Player#1 =====
+sdg
+
+0
+0
+===== Player#2 =====
+dagba
+
+0
+0
+===== Player#3 =====
+cd "/home/john/Documents/Git Repos/CIS 131/Game_Project/" && javac ProjectFileIO_v2.java && java ProjectFileIO_v2
+
+0
+0
+===== Player#4 =====
+Jimmy
+testpassword!3#$2
+0
+0
+===== Player#5 =====
+Chad
+ppPooPoo
+0
+0
+===== Player#6 =====
+Jerry
+jerry's password
+0
+0
+===== Player#7 =====
+johnny
+john g
+0
+0
+===== Player#8 =====
+jog
+jog on
+0
+0
+===== Player#9 =====
+sdfbfdh
+dsfdsfds
+0
+0
+===== Player#10 =====
+sdj
+sdfsdfsdf
+0
+0
+===== Player#11 =====
+sd
+sdsdsdsd
+0
+0
+===== Player#12 =====
+John
+jojojojoj
+0
+0
+--- End of File ---
