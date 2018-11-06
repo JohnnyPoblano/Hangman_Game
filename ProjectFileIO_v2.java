@@ -28,7 +28,11 @@ public class ProjectFileIO_v2 {
     //================================================================================================================
 
     public static void main(String[] args) throws IOException {
-        readFile();
+        try {
+            readFile();
+        } catch(IOException io) {
+            System.out.println("IOException " + io.getMessage());
+        }
         
         // Get username input from user
         String user = IR4.getString("Please enter your username");
@@ -71,14 +75,25 @@ public class ProjectFileIO_v2 {
             }
 
             // Loop for getting correct password
-            String existingPass = IR4.getString("Please enter password for user " + user);
-            while (!existingPass.equals(existingPlayer.getPassword())) {
-                existingPass = IR4.getString("Incorrect password for user " + user + ". Please enter password.");
+            String existingPass = IR4.getString("Please enter password for user " + user + " (or q to quit).");
+            
+            while (!existingPass.equals(existingPlayer.getPassword()) && !existingPass.equals("q")) {
+                existingPass = IR4.getString("Incorrect password for user " + user + ". Please enter password (or q to quit).");
             }
+
+            // Password correct
+            if (!existingPass.equals("q")) {
+                System.out.println("Password authenticated.");
+            }
+
         }
         //================= END EXISTING USER ======================/
 
-        writeFile(); 
+        try {
+            writeFile();
+        } catch(IOException io) {
+            System.out.println("IOException " + io.getMessage());
+        }
     }
     
     //================================================================================================================
@@ -376,6 +391,34 @@ public class ProjectFileIO_v2 {
             System.out.println("IOException " + io.getMessage());
         }
 
+    }
+
+    // Get arraylist of words from specified .txt file
+    public static ArrayList<String> getDictionary(String txt) {
+        
+        // Declare arraylist
+        ArrayList<String> WordArrayList = new ArrayList<String>();
+
+        // Create file instance
+        java.io.File file = new java.io.File(txt);
+
+        // Create scanner
+        try (Scanner input = new Scanner(file)) {
+    
+            // Loop through .txt file
+            while (input.hasNext()) {
+                String word = input.nextLine();
+                WordArrayList.add(word);
+            }
+
+            // Close the file
+            input.close();
+
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found exception: " + e.getMessage());    
+        } 
+
+        return WordArrayList;
     }
     
 }
