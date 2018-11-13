@@ -1,4 +1,4 @@
-public class Player {
+public class Player implements Comparable<Player> {
     
     private String name;
     private String password;
@@ -46,5 +46,14 @@ public class Player {
     public int getNumberOfTimesPlayed(){
         return numberOfTimesPlayed;
     }
+
+    @Override     
+    public int compareTo(Player player) {          
+  
+      return (this.getHighScore() < player.getHighScore() ? -1 : 
+             (this.getHighScore() == player.getHighScore() ? 0 : 1));     
+    }
+  
+  
     
 }

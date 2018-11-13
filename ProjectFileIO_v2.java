@@ -314,7 +314,7 @@ public class ProjectFileIO_v2 {
        }
         System.out.println("Error in updatePlayer. Player not found.");
         System.exit(-1);
-    }    
+    }
     
     //Adds the new Player object if there is no duplicate name and password 
     public static boolean addNewPlayer(Player newPlayer){
@@ -389,6 +389,34 @@ public class ProjectFileIO_v2 {
             writeFile();
         } catch(IOException io) {
             System.out.println("IOException " + io.getMessage());
+        }
+
+    }
+
+    // Get top ten high scores
+    public static ArrayList<Player> getTopTen() {
+        
+        // Read file
+        try {
+            readFile();
+        } catch(IOException io) {
+            System.out.println("IOException " + io.getMessage());
+        }
+
+        // Copy contents of player array to temp array
+        ArrayList<Player> tempPlayers = new ArrayList<Player>();
+
+        for (int i = 0; i < playerArrayList.size(); i++) {
+            tempPlayers.add(playerArrayList.get(i));
+        }
+
+        // Add top ten from temp players to top ten arraylist
+        ArrayList<Player> topTen = new ArrayList<Player>();
+        int counter = 0;
+        while (tempPlayers.size() > 0 || counter < 10) {
+            
+            
+            counter++;
         }
 
     }
