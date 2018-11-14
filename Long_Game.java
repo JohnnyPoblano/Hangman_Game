@@ -1,18 +1,19 @@
 import java.util.*;
 
-public class Short_Game{
-  //For Short game mode: Words between 5 and 7 letters long. 
-  //The user has until one turn after the head, body, left and right arm, 
-  //left and right leg are added to guess the word. That is 7 chances. 
- 
-
+public class Long_Game{
+  //For Long game mode: Words 11+ letters. 
+  //The user has until one turn after the head, neck, shoulders, body, left and right arm, 
+  //left and right leg, left and right hand, left and right foot are added to guess the word. 
+  //That is 13 chances. 
+  
+  
   //Constants////////////////////////////////////////////////////////////////////////////////////////
   //Scoring Constants
-  final static int WON = 10;
-  final static int LOST = 5;
-  final static int LESS_THAN_3 = 50;
-  final static int LESS_THAN_4 = 25;
-  final static int LESS_THAN_6 = 10;
+  final static int WON = 200;
+  final static int LOST = 100;
+  final static int LESS_THAN_6 = 50;
+  final static int LESS_THAN_9 = 25;
+  final static int LESS_THAN_12 = 10;
   
   final static int CORRECT_CONSONANT = 10;
   final static int CORRECT_VOWEL = 15;
@@ -97,7 +98,7 @@ public class Short_Game{
                               
   
   //default constructor///////////////////////////////////////////////////////////////////////////////
-  Short_Game(int t, String name){
+  Long_Game(int t, String name){
     won = false;
     correctGuess = false;
     correctVowel = false;
@@ -334,7 +335,4 @@ public class Short_Game{
       }
     }//end initializeWordArray
     
-    
-    
-  
-}//end short game class
+  }//end Long game
