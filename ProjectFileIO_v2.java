@@ -413,12 +413,36 @@ public class ProjectFileIO_v2 {
         // Add top ten from temp players to top ten arraylist
         ArrayList<Player> topTen = new ArrayList<Player>();
         int counter = 0;
-        while (tempPlayers.size() > 0 || counter < 10) {
-            
-            
+        while (tempPlayers.size() > 0 && counter < 10) {
+            int topPlayerIndex = 0;
+            for (int i = 0; i < tempPlayers.size(); i++) {
+                if (tempPlayers.get(i).getHighScore() > tempPlayers.get(topPlayerIndex).getHighScore()) {
+                    topPlayerIndex = i;
+                }
+            }
+
+            topTen.add(tempPlayers.get(topPlayerIndex));
+            tempPlayers.remove(topPlayerIndex);            
             counter++;
         }
 
+        return topTen;
+    }
+
+    // Display top ten with names and high scores
+    public static void displayTopTen() {
+        ArrayList<Player> topTen = new ArrayList<Player>();
+        topTen = getTopTen();
+        System.out.println("********************************");
+        System.out.println("           High Scores          ");
+        System.out.println("********************************");
+        System.out.println("Player                     Score");
+        System.out.println("********************************");
+        // 16/16
+        for (int i = 0; i < topTen.size(); i++) {
+            System.out.printf("%-16s%16d", topTen.get(i).getName(), topTen.get(i).getHighScore());
+            System.out.println();
+        }
     }
 
     // Get arraylist of words from specified .txt file

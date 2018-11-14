@@ -19,7 +19,7 @@ public class FileIOTest {
         System.out.println(players.toString());
         */
 
-        try {
+        /*try {
             ProjectFileIO_v2.readFile();
         } catch(IOException io) {
             System.out.println("IOException " + io.getMessage());
@@ -29,6 +29,10 @@ public class FileIOTest {
         players = ProjectFileIO_v2.getPlayerArrayList();
         System.out.println(players.get(0).getHighScore());
         System.out.println(players.get(0).getName());
+        */
+
+        ProjectFileIO_v2.displayTopTen();
+
 
     }    
 }

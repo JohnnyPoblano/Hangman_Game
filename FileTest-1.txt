@@ -10,52 +10,52 @@ The 2nd setting would go here...
 ===== Player#0 =====
 Jrgw
 
-0
+12
 0
 ===== Player#1 =====
 sdg
 
-0
-0
+45
+540
 ===== Player#2 =====
 dagba
 
-0
-0
+345
+340
 ===== Player#3 =====
-cd "/home/john/Documents/Git Repos/CIS 131/Game_Project/" && javac ProjectFileIO_v2.java && java ProjectFileIO_v2
+MyNemJeff
 
-0
-0
+243623
+6
 ===== Player#4 =====
 Jimmy
 testpassword!3#$2
-0
-0
+234523
+45
 ===== Player#5 =====
 Chad
 ppPooPoo
-0
-0
+2345
+3
 ===== Player#6 =====
 Jerry
 jerry's password
-0
-0
+3425234
+56
 ===== Player#7 =====
 johnny
 john g
-0
-0
+234623
+90
 ===== Player#8 =====
 jog
 jog on
-0
-0
+345
+23
 ===== Player#9 =====
 sdfbfdh
 dsfdsfds
-0
+345
 0
 ===== Player#10 =====
 sdj
@@ -65,16 +65,21 @@ sdfsdfsdf
 ===== Player#11 =====
 sd
 sdsdsdsd
-0
+3
 0
 ===== Player#12 =====
 John
 jojojojoj
 0
-0
+234
 ===== Player#13 =====
 skjdfhfbwkee
 kdfjhakdfhadlfld
+0
+2345
+===== Player#14 =====
+poopityscoopity
+dongshlong
 0
 0
 --- End of File ---
