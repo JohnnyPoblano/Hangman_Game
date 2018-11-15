@@ -12,6 +12,8 @@ public class ProjectFileIO_v2 {
     private static String PLAYER_MARKER          = "=";
     private static String GLOBAL_SETTINGS_MARKER = ">";
     private static String COMMENT_MARKER         = "*";
+
+    private static boolean DEBUG = false;
     
     private static String VERSION_NUMBER = "1.0";
     
@@ -198,7 +200,9 @@ public class ProjectFileIO_v2 {
         String entireLine ="";
         try {
             entireLine = br.readLine();
-            System.out.println(entireLine);  
+            if (DEBUG) {
+                System.out.println(entireLine);
+            }
         }
         catch (FileNotFoundException e) {
             System.out.println(FILE_NAME + " not found. Creating new file.");
