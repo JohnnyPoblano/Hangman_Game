@@ -80,10 +80,10 @@
             //Call highScores 
             if(s1.equals("5")){ 
                 ///////////////////Display Top Ten///////////////////////////////////////////////////////////////// 
-                ProjectFileIO_v2.displayTopTen(); //get top ten from saved file 
+                ProjectFileIO_v2.displayTopTen(); // Get top ten from saved file 
                 String tempString = IR4.getString("Press enter to continue...");
                 tempString = null;
-                menu(gameType);
+                menu(gameType); // Recursive method call gets menu back afterwards
             } 
             // Save File 
             if(s1.equals("6")){ 
