@@ -459,9 +459,7 @@ public class ProjectFileIO_v2 {
         java.io.File file = new java.io.File(txt);
 
         // Create scanner
-        try {
-          Scanner input = new Scanner(file); 
-  
+        try (Scanner input = new Scanner(file)) {
     
             // Loop through .txt file
             while (input.hasNext()) {
