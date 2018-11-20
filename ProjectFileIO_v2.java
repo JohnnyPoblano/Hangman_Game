@@ -28,77 +28,6 @@ public class ProjectFileIO_v2 {
     private static ArrayList<Player> playerArrayList = new ArrayList<Player>();
 
     //================================================================================================================
-
-    public static void main(String[] args) throws IOException {
-        try {
-            readFile();
-        } catch(IOException io) {
-            System.out.println("IOException " + io.getMessage());
-        }
-        
-        // Get username input from user
-        String user = IR4.getString("Please enter your username");
-
-        // Create object and add username to it
-        Player newPlayer = new Player();
-        newPlayer.setName(user);
-
-        // Check for user in File
-        boolean userCreated = addNewPlayer(newPlayer);
-
-        //===================== NEW USER ===========================/
-        if (userCreated) {
-            System.out.println("User " + user + " created.");
-            
-            // Get a new password for new user (No spaces and > 8 chars)
-            String newPass = IR4.getString("Please set a password.");
-            while (newPass.length() < 8 || newPass.contains(" ")) {
-                System.out.println("Error. Password must be at least 8 characters long and contain no spaces.");
-                newPass = IR4.getString("Please set a password.");
-            }
-            newPlayer.setPassword(newPass);
-
-            // Update player with new password
-            updatePlayer(newPlayer);
-        }
-        //=================== END NEW USER =========================/
-        
-        //=================== EXISTING USER ========================/
-        if (!userCreated) {
-            System.out.println("User " + user + " found.");
-            
-            // Set existing user to reference variable
-            Player existingPlayer = new Player();
-            for (int i = 0; i < playerArrayList.size(); i++) {
-                if (playerArrayList.get(i).getName().equals(newPlayer.getName())) {
-                    existingPlayer = playerArrayList.get(i);
-                    break;
-                }
-            }
-
-            // Loop for getting correct password
-            String existingPass = IR4.getString("Please enter password for user " + user + " (or q to quit).");
-            
-            while (!existingPass.equals(existingPlayer.getPassword()) && !existingPass.equals("q")) {
-                existingPass = IR4.getString("Incorrect password for user " + user + ". Please enter password (or q to quit).");
-            }
-
-            // Password correct
-            if (!existingPass.equals("q")) {
-                System.out.println("Password authenticated.");
-            }
-
-        }
-        //================= END EXISTING USER ======================/
-
-        try {
-            writeFile();
-        } catch(IOException io) {
-            System.out.println("IOException " + io.getMessage());
-        }
-    }
-    
-    //================================================================================================================
     
     public static void readFile() throws IOException {
         System.out.println("Reading File...\n");
@@ -477,6 +406,33 @@ public class ProjectFileIO_v2 {
         } 
 
         return WordArrayList;
+    }
+
+    public static updateHighScore(String user, int score) {
+
+        // Read file
+        try {
+            readFile();
+        } catch(IOException io) {
+            System.out.println("IOException " + io.getMessage());
+        }
+
+        // Loop through array to get player by name
+        Player player = new Player();
+        for (int i = 0; i < playerArrayList.size(); i++) {
+            if (playerArrayList.get(i).getName().equals(user)) {
+                boolean found = true;
+                player = playerArrayList.get(i);
+            }
+        }
+
+        // Alert if no player found
+        if (!found) {System.out.println("Error. User " + user + " not found.");}
+
+        // Compare score to high score and set it if it's larger
+        if (score > player.getHighScore()) {
+            player.setHighScore(score);
+        }
     }
     
 }

@@ -70,9 +70,11 @@
                 if(s1.equals("5")){ 
                     ///////////////////Display Top Ten///////////////////////////////////////////////////////////////// 
                     ProjectFileIO_v2.displayTopTen(); // Get top ten from saved file 
-                    String tempString = IR4.getString("Press enter to continue...");
+                    System.out.println("Press enter to continue...");
+                    String tempString = input.nextLine();
                     tempString = null;
                     menu(gameType); // Recursive method call gets menu back afterwards
+                    return; // Prevents multiple instances of menu from stacking
                 } 
                 // Save File 
                 if(s1.equals("6")){ 
