@@ -262,7 +262,7 @@ public class ProjectFileIO_v2 {
         return true; //the player was added successfully. 
     }
     
-    public static void runFileIO() {
+    public static String runPlayerLogin() {
 
         try {
             readFile();
@@ -271,7 +271,7 @@ public class ProjectFileIO_v2 {
         }
         
         // Get username input from user
-        String user = IR4.getString("Please enter your username");
+        String user = IR4.getString("Please enter your username.");
 
         // Create object and add username to it
         Player newPlayer = new Player();
@@ -284,9 +284,9 @@ public class ProjectFileIO_v2 {
         if (userCreated) {
             System.out.println("User " + user + " created.");
             
-            // Get a new password for new user (No spaces and > 8 chars)
+            // Get a new password for new user (No spaces and > 6 chars)
             String newPass = IR4.getString("Please set a password.");
-            while (newPass.length() < 8 || newPass.contains(" ")) {
+            while (newPass.length() < 6 || newPass.contains(" ")) {
                 System.out.println("Error. Password must be at least 8 characters long and contain no spaces.");
                 newPass = IR4.getString("Please set a password.");
             }
@@ -313,16 +313,23 @@ public class ProjectFileIO_v2 {
             // Loop for getting correct password
             String existingPass = IR4.getString("Please enter password for user " + user);
             while (!existingPass.equals(existingPlayer.getPassword())) {
-                existingPass = IR4.getString("Incorrect password for user " + user + ". Please enter password.");
+                existingPass = IR4.getString("Incorrect password for user " + user + ". Please enter password (or \"q\" to quit).");
+                if (existingPass.equals("q")) {
+                    return "";
+                };
             }
         }
         //================= END EXISTING USER ======================/
 
+
+        
         try {
             writeFile();
         } catch(IOException io) {
             System.out.println("IOException " + io.getMessage());
         }
+
+        return user;
 
     }
 
