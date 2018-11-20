@@ -408,7 +408,7 @@ public class ProjectFileIO_v2 {
         return WordArrayList;
     }
 
-    public static updateHighScore(String user, int score) {
+    public static void updateHighScore(String user, int score) {
 
         // Read file
         try {
@@ -419,19 +419,28 @@ public class ProjectFileIO_v2 {
 
         // Loop through array to get player by name
         Player player = new Player();
+        boolean found = false;
         for (int i = 0; i < playerArrayList.size(); i++) {
             if (playerArrayList.get(i).getName().equals(user)) {
-                boolean found = true;
+                found = true;
                 player = playerArrayList.get(i);
             }
         }
 
         // Alert if no player found
         if (!found) {System.out.println("Error. User " + user + " not found.");}
+        else {System.out.println("User " + user + " updated successfully.");}
 
         // Compare score to high score and set it if it's larger
         if (score > player.getHighScore()) {
             player.setHighScore(score);
+        }
+
+        // Write file
+        try {
+            writeFile();
+        } catch(IOException io) {
+            System.out.println("IOException " + io.getMessage());
         }
     }
     
