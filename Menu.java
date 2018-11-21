@@ -80,8 +80,8 @@
                 if(s1.equals("6")) {
                     String username = ProjectFileIO_v2.runPlayerLogin();
                     if (!username.equals("")) {
-                        System.out.println("Signed in as " + username + ".");
                         menu(gameType, username);// Call overloaded logged in user menu
+                        return; // Prevents multiple instances of menu from stacking
                     }
                     else {
                         menu(gameType); // Recursive method call gets menu back afterwards
@@ -138,7 +138,8 @@
                 System.out.println("                    __/ |                      "); 
                 System.out.println("                   |___/                       "); 
                 System.out.println("**************************************************"); 
-                System.out.println("             Welcome to Hangman "); 
+                System.out.println("             Welcome to Hangman ");
+                System.out.println("             Signed in as " + username + "."); 
                 System.out.println("**************************************************"); 
                 System.out.println("Please select a game option:"); 
                 System.out.println("              1. Quick game"); 
@@ -182,7 +183,7 @@
                     System.out.println("Press enter to continue...");
                     String tempString = input.nextLine();
                     tempString = null;
-                    menu(gameType); // Recursive method call gets menu back afterwards
+                    menu(gameType, username);// Call overloaded logged in user menu
                     return; // Prevents multiple instances of menu from stacking
                 } 
                 
