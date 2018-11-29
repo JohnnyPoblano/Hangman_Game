@@ -54,8 +54,8 @@
                 }  
                 else if(s1.equals("7")){ 
                     System.out.println("Thank you for playing Hangman!!!"); 
-                    System.exit(1); 
-                    return; 
+                    return;
+                    
                 } 
                 else { 
                 System.out.println("Please select an theme option:"); 
