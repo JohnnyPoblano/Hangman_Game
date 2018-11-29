@@ -378,7 +378,6 @@ public class ProjectFileIO_v2 {
         System.out.println("********************************");
         System.out.println("Player                     Score");
         System.out.println("********************************");
-        // 16/16
         for (int i = 0; i < topTen.size(); i++) {
             System.out.printf("%-16s%16d", topTen.get(i).getName(), topTen.get(i).getHighScore());
             System.out.println();
