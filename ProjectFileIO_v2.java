@@ -262,7 +262,7 @@ public class ProjectFileIO_v2 {
         return true; //the player was added successfully. 
     }
     
-    public static void runFileIO() {
+    public static String runPlayerLogin() {
 
         try {
             readFile();
@@ -271,7 +271,7 @@ public class ProjectFileIO_v2 {
         }
         
         // Get username input from user
-        String user = IR4.getString("Please enter your username");
+        String user = IR4.getString("Please enter your username.");
 
         // Create object and add username to it
         Player newPlayer = new Player();
@@ -284,9 +284,9 @@ public class ProjectFileIO_v2 {
         if (userCreated) {
             System.out.println("User " + user + " created.");
             
-            // Get a new password for new user (No spaces and > 8 chars)
+            // Get a new password for new user (No spaces and > 6 chars)
             String newPass = IR4.getString("Please set a password.");
-            while (newPass.length() < 8 || newPass.contains(" ")) {
+            while (newPass.length() < 6 || newPass.contains(" ")) {
                 System.out.println("Error. Password must be at least 8 characters long and contain no spaces.");
                 newPass = IR4.getString("Please set a password.");
             }
@@ -313,16 +313,23 @@ public class ProjectFileIO_v2 {
             // Loop for getting correct password
             String existingPass = IR4.getString("Please enter password for user " + user);
             while (!existingPass.equals(existingPlayer.getPassword())) {
-                existingPass = IR4.getString("Incorrect password for user " + user + ". Please enter password.");
+                existingPass = IR4.getString("Incorrect password for user " + user + ". Please enter password (or \"q\" to quit).");
+                if (existingPass.equals("q")) {
+                    return "";
+                };
             }
         }
         //================= END EXISTING USER ======================/
 
+
+        
         try {
             writeFile();
         } catch(IOException io) {
             System.out.println("IOException " + io.getMessage());
         }
+
+        return user;
 
     }
 
@@ -371,7 +378,6 @@ public class ProjectFileIO_v2 {
         System.out.println("********************************");
         System.out.println("Player                     Score");
         System.out.println("********************************");
-        // 16/16
         for (int i = 0; i < topTen.size(); i++) {
             System.out.printf("%-16s%16d", topTen.get(i).getName(), topTen.get(i).getHighScore());
             System.out.println();
@@ -408,7 +414,7 @@ public class ProjectFileIO_v2 {
         return WordArrayList;
     }
 
-    public static updateHighScore(String user, int score) {
+    public static void updateHighScore(String user, int score) {
 
         // Read file
         try {
@@ -419,19 +425,28 @@ public class ProjectFileIO_v2 {
 
         // Loop through array to get player by name
         Player player = new Player();
+        boolean found = false;
         for (int i = 0; i < playerArrayList.size(); i++) {
             if (playerArrayList.get(i).getName().equals(user)) {
-                boolean found = true;
+                found = true;
                 player = playerArrayList.get(i);
             }
         }
 
         // Alert if no player found
         if (!found) {System.out.println("Error. User " + user + " not found.");}
+        else {System.out.println("User " + user + " updated successfully.");}
 
         // Compare score to high score and set it if it's larger
         if (score > player.getHighScore()) {
             player.setHighScore(score);
+        }
+
+        // Write file
+        try {
+            writeFile();
+        } catch(IOException io) {
+            System.out.println("IOException " + io.getMessage());
         }
     }
     

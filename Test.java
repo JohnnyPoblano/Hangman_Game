@@ -33,7 +33,7 @@ public class Test {
 
         // ProjectFileIO_v2.displayTopTen();
 
-        
+        ProjectFileIO_v2.updateHighScore("sdg", 7777778);
 
 
     }    
