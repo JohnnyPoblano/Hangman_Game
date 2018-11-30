@@ -1,0 +1,525 @@
+15 Nov 2018 19:44:53 GMT: Log 'EclipseCompiler.txt' opened: 15 Nov 2018 19:44:53 GMT with name C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\EclipseCompiler.txt
+15 Nov 2018 19:45:16 GMT: diagnostics = javax.tools.DiagnosticCollector@3e51d9d0
+fileManager = org.eclipse.jdt.internal.compiler.tool.EclipseFileManager@25cae8be
+fileObjects = [C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\IR4.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Player.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Test.java]
+15 Nov 2018 19:45:16 GMT: Calling 'org.eclipse.jdt.internal.compiler.tool.EclipseCompiler@11648b6a' with options [-Xlint:deprecation, -Xlint:unchecked, -g, -classpath, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project;C:\Users\isles\Desktop\drjava-beta-20160913-225446.exe]
+15 Nov 2018 19:45:17 GMT: Compiler call returned
+15 Nov 2018 19:45:17 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@7a4c681
+15 Nov 2018 19:45:17 GMT:  Kind = WARNING
+15 Nov 2018 19:45:17 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 10 ColNo = 32 Msg = 'The value of the field Hangman.keyboard is not used'
+15 Nov 2018 19:45:17 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@5975c7ed
+15 Nov 2018 19:45:17 GMT:  Kind = WARNING
+15 Nov 2018 19:45:17 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 105 ColNo = 23 Msg = 'Dead code'
+15 Nov 2018 19:45:17 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@78c4928c
+15 Nov 2018 19:45:17 GMT:  Kind = WARNING
+15 Nov 2018 19:45:17 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 29 ColNo = 21 Msg = 'Resource leak: 'input' is never closed'
+15 Nov 2018 19:45:17 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@687dc05e
+15 Nov 2018 19:45:17 GMT:  Kind = WARNING
+15 Nov 2018 19:45:17 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 29 ColNo = 21 Msg = 'The value of the local variable input is not used'
+15 Nov 2018 19:45:17 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@73aec716
+15 Nov 2018 19:45:17 GMT:  Kind = WARNING
+15 Nov 2018 19:45:17 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 84 ColNo = 24 Msg = 'The value of the local variable tempString is not used'
+15 Nov 2018 19:45:17 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@4133c21
+15 Nov 2018 19:45:17 GMT:  Kind = WARNING
+15 Nov 2018 19:45:17 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 94 ColNo = 24 Msg = 'The value of the local variable password is not used'
+15 Nov 2018 19:45:17 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@581f9edd
+15 Nov 2018 19:45:17 GMT:  Kind = WARNING
+15 Nov 2018 19:45:17 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Test.java LineNo = 2 ColNo = 8 Msg = 'The import java.util is never used'
+15 Nov 2018 19:45:17 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@5ee6dab0
+15 Nov 2018 19:45:17 GMT:  Kind = ERROR
+15 Nov 2018 19:45:17 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 462 ColNo = 14 Msg = 'Resource specification not allowed here for source level below 1.7'
+15 Nov 2018 19:45:17 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@5bf5200d
+15 Nov 2018 19:45:17 GMT:  Kind = WARNING
+15 Nov 2018 19:45:17 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 288 ColNo = 19 Msg = 'java.util.ArrayList is a raw type. References to generic type java.util.ArrayList<E> should be parameterized'
+15 Nov 2018 19:45:17 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@469aed66
+15 Nov 2018 19:45:17 GMT:  Kind = WARNING
+15 Nov 2018 19:45:17 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 169 ColNo = 16 Msg = 'The value of the local variable setting1 is not used'
+15 Nov 2018 19:45:17 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@62d76a1e
+15 Nov 2018 19:45:17 GMT:  Kind = WARNING
+15 Nov 2018 19:45:17 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 170 ColNo = 16 Msg = 'The value of the local variable setting2 is not used'
+15 Nov 2018 19:45:28 GMT: diagnostics = javax.tools.DiagnosticCollector@660c525b
+fileManager = org.eclipse.jdt.internal.compiler.tool.EclipseFileManager@5353f1a
+fileObjects = [C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\IR4.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Player.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Test.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java]
+15 Nov 2018 19:45:28 GMT: Calling 'org.eclipse.jdt.internal.compiler.tool.EclipseCompiler@1ff26b4e' with options [-Xlint:deprecation, -Xlint:unchecked, -g, -classpath, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project;C:\Users\isles\Desktop\drjava-beta-20160913-225446.exe]
+15 Nov 2018 19:45:28 GMT: Compiler call returned
+15 Nov 2018 19:45:28 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@1a640282
+15 Nov 2018 19:45:28 GMT:  Kind = WARNING
+15 Nov 2018 19:45:28 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 10 ColNo = 32 Msg = 'The value of the field Hangman.keyboard is not used'
+15 Nov 2018 19:45:28 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@41265d75
+15 Nov 2018 19:45:28 GMT:  Kind = WARNING
+15 Nov 2018 19:45:28 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 105 ColNo = 23 Msg = 'Dead code'
+15 Nov 2018 19:45:28 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@ca77bea
+15 Nov 2018 19:45:28 GMT:  Kind = WARNING
+15 Nov 2018 19:45:28 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 29 ColNo = 21 Msg = 'Resource leak: 'input' is never closed'
+15 Nov 2018 19:45:28 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@16f80982
+15 Nov 2018 19:45:28 GMT:  Kind = WARNING
+15 Nov 2018 19:45:28 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 29 ColNo = 21 Msg = 'The value of the local variable input is not used'
+15 Nov 2018 19:45:28 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@2c3269cd
+15 Nov 2018 19:45:28 GMT:  Kind = WARNING
+15 Nov 2018 19:45:28 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 84 ColNo = 24 Msg = 'The value of the local variable tempString is not used'
+15 Nov 2018 19:45:28 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@5f0c44cb
+15 Nov 2018 19:45:28 GMT:  Kind = WARNING
+15 Nov 2018 19:45:28 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 94 ColNo = 24 Msg = 'The value of the local variable password is not used'
+15 Nov 2018 19:45:28 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@68431ceb
+15 Nov 2018 19:45:28 GMT:  Kind = WARNING
+15 Nov 2018 19:45:28 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Test.java LineNo = 2 ColNo = 8 Msg = 'The import java.util is never used'
+15 Nov 2018 19:45:28 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@3e21bc78
+15 Nov 2018 19:45:28 GMT:  Kind = ERROR
+15 Nov 2018 19:45:28 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 462 ColNo = 14 Msg = 'Resource specification not allowed here for source level below 1.7'
+15 Nov 2018 19:45:28 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@162d670
+15 Nov 2018 19:45:28 GMT:  Kind = WARNING
+15 Nov 2018 19:45:28 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 288 ColNo = 19 Msg = 'java.util.ArrayList is a raw type. References to generic type java.util.ArrayList<E> should be parameterized'
+15 Nov 2018 19:45:28 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@3c75f08b
+15 Nov 2018 19:45:28 GMT:  Kind = WARNING
+15 Nov 2018 19:45:28 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 169 ColNo = 16 Msg = 'The value of the local variable setting1 is not used'
+15 Nov 2018 19:45:28 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@4ca107aa
+15 Nov 2018 19:45:28 GMT:  Kind = WARNING
+15 Nov 2018 19:45:28 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 170 ColNo = 16 Msg = 'The value of the local variable setting2 is not used'
+15 Nov 2018 20:08:17 GMT: diagnostics = javax.tools.DiagnosticCollector@475b8224
+fileManager = org.eclipse.jdt.internal.compiler.tool.EclipseFileManager@5044bc0c
+fileObjects = [C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\IR4.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Player.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Test.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java]
+15 Nov 2018 20:08:17 GMT: Calling 'org.eclipse.jdt.internal.compiler.tool.EclipseCompiler@541deddc' with options [-Xlint:deprecation, -Xlint:unchecked, -g, -classpath, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project;C:\Users\isles\Desktop\drjava-beta-20160913-225446.exe]
+15 Nov 2018 20:08:18 GMT: Compiler call returned
+15 Nov 2018 20:08:18 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@51c3aad6
+15 Nov 2018 20:08:18 GMT:  Kind = WARNING
+15 Nov 2018 20:08:18 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 10 ColNo = 32 Msg = 'The value of the field Hangman.keyboard is not used'
+15 Nov 2018 20:08:18 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@367a1610
+15 Nov 2018 20:08:18 GMT:  Kind = WARNING
+15 Nov 2018 20:08:18 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 105 ColNo = 23 Msg = 'Dead code'
+15 Nov 2018 20:08:18 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@167d7848
+15 Nov 2018 20:08:18 GMT:  Kind = WARNING
+15 Nov 2018 20:08:18 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 29 ColNo = 21 Msg = 'Resource leak: 'input' is never closed'
+15 Nov 2018 20:08:18 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@31b04d33
+15 Nov 2018 20:08:18 GMT:  Kind = WARNING
+15 Nov 2018 20:08:18 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 29 ColNo = 21 Msg = 'The value of the local variable input is not used'
+15 Nov 2018 20:08:18 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@7d69c4c9
+15 Nov 2018 20:08:18 GMT:  Kind = WARNING
+15 Nov 2018 20:08:18 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 84 ColNo = 24 Msg = 'The value of the local variable tempString is not used'
+15 Nov 2018 20:08:18 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@1b4597e2
+15 Nov 2018 20:08:18 GMT:  Kind = WARNING
+15 Nov 2018 20:08:18 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 94 ColNo = 24 Msg = 'The value of the local variable password is not used'
+15 Nov 2018 20:08:18 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@668703fa
+15 Nov 2018 20:08:18 GMT:  Kind = WARNING
+15 Nov 2018 20:08:18 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Test.java LineNo = 2 ColNo = 8 Msg = 'The import java.util is never used'
+15 Nov 2018 20:08:18 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@55ed13cc
+15 Nov 2018 20:08:18 GMT:  Kind = ERROR
+15 Nov 2018 20:08:18 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 462 ColNo = 9 Msg = 'Syntax error on token "try", invalid Modifiers'
+15 Nov 2018 20:08:18 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@6691da34
+15 Nov 2018 20:08:18 GMT:  Kind = ERROR
+15 Nov 2018 20:08:18 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 462 ColNo = 47 Msg = 'Syntax error, insert "}" to complete ClassBody'
+15 Nov 2018 20:08:18 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@51dcab83
+15 Nov 2018 20:08:18 GMT:  Kind = ERROR
+15 Nov 2018 20:08:18 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 462 ColNo = 47 Msg = 'Syntax error, insert ";" to complete LocalVariableDeclarationStatement'
+15 Nov 2018 20:08:18 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@f9afa91
+15 Nov 2018 20:08:18 GMT:  Kind = ERROR
+15 Nov 2018 20:08:18 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 473 ColNo = 9 Msg = 'Syntax error on tokens, delete these tokens'
+15 Nov 2018 20:08:18 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@32d4fbdd
+15 Nov 2018 20:08:18 GMT:  Kind = WARNING
+15 Nov 2018 20:08:18 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 288 ColNo = 19 Msg = 'java.util.ArrayList is a raw type. References to generic type java.util.ArrayList<E> should be parameterized'
+15 Nov 2018 20:08:18 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@5a7cc7c9
+15 Nov 2018 20:08:18 GMT:  Kind = WARNING
+15 Nov 2018 20:08:18 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 169 ColNo = 16 Msg = 'The value of the local variable setting1 is not used'
+15 Nov 2018 20:08:18 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@6ec8efb6
+15 Nov 2018 20:08:18 GMT:  Kind = WARNING
+15 Nov 2018 20:08:18 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 170 ColNo = 16 Msg = 'The value of the local variable setting2 is not used'
+15 Nov 2018 20:09:43 GMT: diagnostics = javax.tools.DiagnosticCollector@cfd6b60
+fileManager = org.eclipse.jdt.internal.compiler.tool.EclipseFileManager@76758841
+fileObjects = [C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\IR4.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Player.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Test.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java]
+15 Nov 2018 20:09:43 GMT: Calling 'org.eclipse.jdt.internal.compiler.tool.EclipseCompiler@3535d46e' with options [-Xlint:deprecation, -Xlint:unchecked, -g, -classpath, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project;C:\Users\isles\Desktop\drjava-beta-20160913-225446.exe]
+15 Nov 2018 20:09:43 GMT: Compiler call returned
+15 Nov 2018 20:09:43 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@2bd94af3
+15 Nov 2018 20:09:43 GMT:  Kind = WARNING
+15 Nov 2018 20:09:43 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 10 ColNo = 32 Msg = 'The value of the field Hangman.keyboard is not used'
+15 Nov 2018 20:09:43 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@4490d1c2
+15 Nov 2018 20:09:43 GMT:  Kind = WARNING
+15 Nov 2018 20:09:43 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 105 ColNo = 23 Msg = 'Dead code'
+15 Nov 2018 20:09:43 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@6c602885
+15 Nov 2018 20:09:43 GMT:  Kind = WARNING
+15 Nov 2018 20:09:43 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 29 ColNo = 21 Msg = 'Resource leak: 'input' is never closed'
+15 Nov 2018 20:09:43 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@114c33ac
+15 Nov 2018 20:09:43 GMT:  Kind = WARNING
+15 Nov 2018 20:09:43 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 29 ColNo = 21 Msg = 'The value of the local variable input is not used'
+15 Nov 2018 20:09:43 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@70237da4
+15 Nov 2018 20:09:43 GMT:  Kind = WARNING
+15 Nov 2018 20:09:43 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 84 ColNo = 24 Msg = 'The value of the local variable tempString is not used'
+15 Nov 2018 20:09:43 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@327faca3
+15 Nov 2018 20:09:43 GMT:  Kind = WARNING
+15 Nov 2018 20:09:43 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 94 ColNo = 24 Msg = 'The value of the local variable password is not used'
+15 Nov 2018 20:09:43 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@5fb68e69
+15 Nov 2018 20:09:43 GMT:  Kind = WARNING
+15 Nov 2018 20:09:43 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Test.java LineNo = 2 ColNo = 8 Msg = 'The import java.util is never used'
+15 Nov 2018 20:09:43 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@2f971760
+15 Nov 2018 20:09:43 GMT:  Kind = ERROR
+15 Nov 2018 20:09:43 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 462 ColNo = 14 Msg = 'Resource specification not allowed here for source level below 1.7'
+15 Nov 2018 20:09:43 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@4432816b
+15 Nov 2018 20:09:43 GMT:  Kind = WARNING
+15 Nov 2018 20:09:43 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 288 ColNo = 19 Msg = 'java.util.ArrayList is a raw type. References to generic type java.util.ArrayList<E> should be parameterized'
+15 Nov 2018 20:09:43 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@be727fa
+15 Nov 2018 20:09:43 GMT:  Kind = WARNING
+15 Nov 2018 20:09:43 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 169 ColNo = 16 Msg = 'The value of the local variable setting1 is not used'
+15 Nov 2018 20:09:43 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@60493529
+15 Nov 2018 20:09:43 GMT:  Kind = WARNING
+15 Nov 2018 20:09:43 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 170 ColNo = 16 Msg = 'The value of the local variable setting2 is not used'
+15 Nov 2018 20:10:23 GMT: diagnostics = javax.tools.DiagnosticCollector@555a49f4
+fileManager = org.eclipse.jdt.internal.compiler.tool.EclipseFileManager@3fecc0f1
+fileObjects = [C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\IR4.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Player.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Test.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java]
+15 Nov 2018 20:10:23 GMT: Calling 'org.eclipse.jdt.internal.compiler.tool.EclipseCompiler@18e32efa' with options [-Xlint:deprecation, -Xlint:unchecked, -g, -classpath, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project;C:\Users\isles\Desktop\drjava-beta-20160913-225446.exe]
+15 Nov 2018 20:10:23 GMT: Compiler call returned
+15 Nov 2018 20:10:23 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@745e5534
+15 Nov 2018 20:10:23 GMT:  Kind = WARNING
+15 Nov 2018 20:10:23 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 10 ColNo = 32 Msg = 'The value of the field Hangman.keyboard is not used'
+15 Nov 2018 20:10:23 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@c8c6991
+15 Nov 2018 20:10:23 GMT:  Kind = WARNING
+15 Nov 2018 20:10:23 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 105 ColNo = 23 Msg = 'Dead code'
+15 Nov 2018 20:10:23 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@20346034
+15 Nov 2018 20:10:23 GMT:  Kind = WARNING
+15 Nov 2018 20:10:23 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 29 ColNo = 21 Msg = 'Resource leak: 'input' is never closed'
+15 Nov 2018 20:10:23 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@cd98b4d
+15 Nov 2018 20:10:23 GMT:  Kind = WARNING
+15 Nov 2018 20:10:23 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 29 ColNo = 21 Msg = 'The value of the local variable input is not used'
+15 Nov 2018 20:10:23 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@a289817
+15 Nov 2018 20:10:23 GMT:  Kind = WARNING
+15 Nov 2018 20:10:23 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 84 ColNo = 24 Msg = 'The value of the local variable tempString is not used'
+15 Nov 2018 20:10:23 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@6507a822
+15 Nov 2018 20:10:23 GMT:  Kind = WARNING
+15 Nov 2018 20:10:23 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 94 ColNo = 24 Msg = 'The value of the local variable password is not used'
+15 Nov 2018 20:10:23 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@66315176
+15 Nov 2018 20:10:23 GMT:  Kind = WARNING
+15 Nov 2018 20:10:23 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Test.java LineNo = 2 ColNo = 8 Msg = 'The import java.util is never used'
+15 Nov 2018 20:10:23 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@26f23d1e
+15 Nov 2018 20:10:23 GMT:  Kind = ERROR
+15 Nov 2018 20:10:23 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 462 ColNo = 47 Msg = 'Syntax error on token "}", ; expected'
+15 Nov 2018 20:10:23 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@68d4f1f7
+15 Nov 2018 20:10:23 GMT:  Kind = ERROR
+15 Nov 2018 20:10:23 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 473 ColNo = 9 Msg = 'Syntax error, insert "}" to complete Block'
+15 Nov 2018 20:10:23 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@30ca1277
+15 Nov 2018 20:10:23 GMT:  Kind = WARNING
+15 Nov 2018 20:10:23 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 288 ColNo = 19 Msg = 'java.util.ArrayList is a raw type. References to generic type java.util.ArrayList<E> should be parameterized'
+15 Nov 2018 20:10:23 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@5c9c5ff9
+15 Nov 2018 20:10:23 GMT:  Kind = WARNING
+15 Nov 2018 20:10:23 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 169 ColNo = 16 Msg = 'The value of the local variable setting1 is not used'
+15 Nov 2018 20:10:23 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@6b3183b9
+15 Nov 2018 20:10:23 GMT:  Kind = WARNING
+15 Nov 2018 20:10:23 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 170 ColNo = 16 Msg = 'The value of the local variable setting2 is not used'
+15 Nov 2018 20:10:30 GMT: diagnostics = javax.tools.DiagnosticCollector@56070cfc
+fileManager = org.eclipse.jdt.internal.compiler.tool.EclipseFileManager@c42e630
+fileObjects = [C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\IR4.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Player.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Test.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java]
+15 Nov 2018 20:10:30 GMT: Calling 'org.eclipse.jdt.internal.compiler.tool.EclipseCompiler@379806fb' with options [-Xlint:deprecation, -Xlint:unchecked, -g, -classpath, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project;C:\Users\isles\Desktop\drjava-beta-20160913-225446.exe]
+15 Nov 2018 20:10:30 GMT: Compiler call returned
+15 Nov 2018 20:10:30 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@163cfcd7
+15 Nov 2018 20:10:30 GMT:  Kind = WARNING
+15 Nov 2018 20:10:30 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 10 ColNo = 32 Msg = 'The value of the field Hangman.keyboard is not used'
+15 Nov 2018 20:10:30 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@6c3f0951
+15 Nov 2018 20:10:30 GMT:  Kind = WARNING
+15 Nov 2018 20:10:30 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 105 ColNo = 23 Msg = 'Dead code'
+15 Nov 2018 20:10:30 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@772d3e3e
+15 Nov 2018 20:10:30 GMT:  Kind = WARNING
+15 Nov 2018 20:10:30 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 29 ColNo = 21 Msg = 'Resource leak: 'input' is never closed'
+15 Nov 2018 20:10:30 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@7b73311e
+15 Nov 2018 20:10:30 GMT:  Kind = WARNING
+15 Nov 2018 20:10:30 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 29 ColNo = 21 Msg = 'The value of the local variable input is not used'
+15 Nov 2018 20:10:30 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@ad8b0e3
+15 Nov 2018 20:10:30 GMT:  Kind = WARNING
+15 Nov 2018 20:10:30 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 84 ColNo = 24 Msg = 'The value of the local variable tempString is not used'
+15 Nov 2018 20:10:30 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@1eb95568
+15 Nov 2018 20:10:30 GMT:  Kind = WARNING
+15 Nov 2018 20:10:30 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 94 ColNo = 24 Msg = 'The value of the local variable password is not used'
+15 Nov 2018 20:10:30 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@fb544f
+15 Nov 2018 20:10:30 GMT:  Kind = WARNING
+15 Nov 2018 20:10:30 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Test.java LineNo = 2 ColNo = 8 Msg = 'The import java.util is never used'
+15 Nov 2018 20:10:30 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@62626e8f
+15 Nov 2018 20:10:30 GMT:  Kind = ERROR
+15 Nov 2018 20:10:30 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 462 ColNo = 48 Msg = 'Syntax error, insert "Finally" to complete TryStatement'
+15 Nov 2018 20:10:30 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@2d729588
+15 Nov 2018 20:10:30 GMT:  Kind = ERROR
+15 Nov 2018 20:10:30 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 473 ColNo = 11 Msg = 'Syntax error on token "catch", for expected'
+15 Nov 2018 20:10:30 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@7934975b
+15 Nov 2018 20:10:30 GMT:  Kind = ERROR
+15 Nov 2018 20:10:30 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 473 ColNo = 40 Msg = 'Syntax error, insert "; ; ) Statement" to complete ForStatement'
+15 Nov 2018 20:10:30 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@23b7ed1e
+15 Nov 2018 20:10:30 GMT:  Kind = WARNING
+15 Nov 2018 20:10:30 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 288 ColNo = 19 Msg = 'java.util.ArrayList is a raw type. References to generic type java.util.ArrayList<E> should be parameterized'
+15 Nov 2018 20:10:30 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@52d0f9f1
+15 Nov 2018 20:10:30 GMT:  Kind = WARNING
+15 Nov 2018 20:10:30 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 169 ColNo = 16 Msg = 'The value of the local variable setting1 is not used'
+15 Nov 2018 20:10:30 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@6bb7e8f6
+15 Nov 2018 20:10:30 GMT:  Kind = WARNING
+15 Nov 2018 20:10:30 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 170 ColNo = 16 Msg = 'The value of the local variable setting2 is not used'
+15 Nov 2018 20:10:43 GMT: diagnostics = javax.tools.DiagnosticCollector@6cd61e0a
+fileManager = org.eclipse.jdt.internal.compiler.tool.EclipseFileManager@33816f25
+fileObjects = [C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\IR4.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Player.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Test.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java]
+15 Nov 2018 20:10:43 GMT: Calling 'org.eclipse.jdt.internal.compiler.tool.EclipseCompiler@1f5dae6b' with options [-Xlint:deprecation, -Xlint:unchecked, -g, -classpath, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project;C:\Users\isles\Desktop\drjava-beta-20160913-225446.exe]
+15 Nov 2018 20:10:43 GMT: Compiler call returned
+15 Nov 2018 20:10:43 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@63693347
+15 Nov 2018 20:10:43 GMT:  Kind = WARNING
+15 Nov 2018 20:10:43 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 10 ColNo = 32 Msg = 'The value of the field Hangman.keyboard is not used'
+15 Nov 2018 20:10:43 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@2293836a
+15 Nov 2018 20:10:43 GMT:  Kind = WARNING
+15 Nov 2018 20:10:43 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 105 ColNo = 23 Msg = 'Dead code'
+15 Nov 2018 20:10:43 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@2ee891d7
+15 Nov 2018 20:10:43 GMT:  Kind = WARNING
+15 Nov 2018 20:10:43 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 29 ColNo = 21 Msg = 'Resource leak: 'input' is never closed'
+15 Nov 2018 20:10:43 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@79d1af1
+15 Nov 2018 20:10:43 GMT:  Kind = WARNING
+15 Nov 2018 20:10:43 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 29 ColNo = 21 Msg = 'The value of the local variable input is not used'
+15 Nov 2018 20:10:43 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@2d44e24e
+15 Nov 2018 20:10:43 GMT:  Kind = WARNING
+15 Nov 2018 20:10:43 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 84 ColNo = 24 Msg = 'The value of the local variable tempString is not used'
+15 Nov 2018 20:10:43 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@1372bc5f
+15 Nov 2018 20:10:43 GMT:  Kind = WARNING
+15 Nov 2018 20:10:43 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 94 ColNo = 24 Msg = 'The value of the local variable password is not used'
+15 Nov 2018 20:10:43 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@797ee1cf
+15 Nov 2018 20:10:43 GMT:  Kind = WARNING
+15 Nov 2018 20:10:43 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Test.java LineNo = 2 ColNo = 8 Msg = 'The import java.util is never used'
+15 Nov 2018 20:10:43 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@16db2683
+15 Nov 2018 20:10:43 GMT:  Kind = ERROR
+15 Nov 2018 20:10:43 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 462 ColNo = 23 Msg = 'Syntax error on token "input", delete this token'
+15 Nov 2018 20:10:43 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@1c87e084
+15 Nov 2018 20:10:43 GMT:  Kind = ERROR
+15 Nov 2018 20:10:43 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 462 ColNo = 48 Msg = 'Syntax error, insert "AssignmentOperator Expression" to complete Expression'
+15 Nov 2018 20:10:43 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@1a11370f
+15 Nov 2018 20:10:43 GMT:  Kind = ERROR
+15 Nov 2018 20:10:43 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 462 ColNo = 50 Msg = 'Syntax error, insert "Finally" to complete TryStatement'
+15 Nov 2018 20:10:43 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@146fdd1b
+15 Nov 2018 20:10:43 GMT:  Kind = ERROR
+15 Nov 2018 20:10:43 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 473 ColNo = 11 Msg = 'Syntax error on token "catch", for expected'
+15 Nov 2018 20:10:43 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@5b4f0e2b
+15 Nov 2018 20:10:43 GMT:  Kind = ERROR
+15 Nov 2018 20:10:43 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 473 ColNo = 40 Msg = 'Syntax error, insert "; ; ) Statement" to complete ForStatement'
+15 Nov 2018 20:10:43 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@78ef5606
+15 Nov 2018 20:10:43 GMT:  Kind = WARNING
+15 Nov 2018 20:10:43 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 288 ColNo = 19 Msg = 'java.util.ArrayList is a raw type. References to generic type java.util.ArrayList<E> should be parameterized'
+15 Nov 2018 20:10:43 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@6bd5af5b
+15 Nov 2018 20:10:43 GMT:  Kind = WARNING
+15 Nov 2018 20:10:43 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 169 ColNo = 16 Msg = 'The value of the local variable setting1 is not used'
+15 Nov 2018 20:10:43 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@138203f
+15 Nov 2018 20:10:43 GMT:  Kind = WARNING
+15 Nov 2018 20:10:43 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 170 ColNo = 16 Msg = 'The value of the local variable setting2 is not used'
+15 Nov 2018 20:11:05 GMT: diagnostics = javax.tools.DiagnosticCollector@773f4e28
+fileManager = org.eclipse.jdt.internal.compiler.tool.EclipseFileManager@60ab7c32
+fileObjects = [C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\IR4.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Player.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Test.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java]
+15 Nov 2018 20:11:05 GMT: Calling 'org.eclipse.jdt.internal.compiler.tool.EclipseCompiler@2ecbab57' with options [-Xlint:deprecation, -Xlint:unchecked, -g, -classpath, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project;C:\Users\isles\Desktop\drjava-beta-20160913-225446.exe]
+15 Nov 2018 20:11:05 GMT: Compiler call returned
+15 Nov 2018 20:11:05 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@e6544f5
+15 Nov 2018 20:11:05 GMT:  Kind = WARNING
+15 Nov 2018 20:11:05 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 10 ColNo = 32 Msg = 'The value of the field Hangman.keyboard is not used'
+15 Nov 2018 20:11:05 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@72763fd0
+15 Nov 2018 20:11:05 GMT:  Kind = WARNING
+15 Nov 2018 20:11:05 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 105 ColNo = 23 Msg = 'Dead code'
+15 Nov 2018 20:11:05 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@2abeab42
+15 Nov 2018 20:11:05 GMT:  Kind = WARNING
+15 Nov 2018 20:11:05 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 29 ColNo = 21 Msg = 'Resource leak: 'input' is never closed'
+15 Nov 2018 20:11:05 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@3186ea98
+15 Nov 2018 20:11:05 GMT:  Kind = WARNING
+15 Nov 2018 20:11:05 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 29 ColNo = 21 Msg = 'The value of the local variable input is not used'
+15 Nov 2018 20:11:05 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@15e042b1
+15 Nov 2018 20:11:05 GMT:  Kind = WARNING
+15 Nov 2018 20:11:05 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 84 ColNo = 24 Msg = 'The value of the local variable tempString is not used'
+15 Nov 2018 20:11:05 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@56ab7762
+15 Nov 2018 20:11:05 GMT:  Kind = WARNING
+15 Nov 2018 20:11:05 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 94 ColNo = 24 Msg = 'The value of the local variable password is not used'
+15 Nov 2018 20:11:05 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@910324e
+15 Nov 2018 20:11:05 GMT:  Kind = WARNING
+15 Nov 2018 20:11:05 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Test.java LineNo = 2 ColNo = 8 Msg = 'The import java.util is never used'
+15 Nov 2018 20:11:05 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@fc4dbde
+15 Nov 2018 20:11:05 GMT:  Kind = ERROR
+15 Nov 2018 20:11:05 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 462 ColNo = 23 Msg = 'Syntax error on token "input", delete this token'
+15 Nov 2018 20:11:05 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@1826f55d
+15 Nov 2018 20:11:05 GMT:  Kind = ERROR
+15 Nov 2018 20:11:05 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 462 ColNo = 48 Msg = 'Syntax error, insert "AssignmentOperator Expression" to complete Assignment'
+15 Nov 2018 20:11:05 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@15bb915c
+15 Nov 2018 20:11:05 GMT:  Kind = ERROR
+15 Nov 2018 20:11:05 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 462 ColNo = 48 Msg = 'Syntax error, insert ";" to complete BlockStatements'
+15 Nov 2018 20:11:05 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@1d3153e7
+15 Nov 2018 20:11:05 GMT:  Kind = WARNING
+15 Nov 2018 20:11:05 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 288 ColNo = 19 Msg = 'java.util.ArrayList is a raw type. References to generic type java.util.ArrayList<E> should be parameterized'
+15 Nov 2018 20:11:05 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@348261b4
+15 Nov 2018 20:11:05 GMT:  Kind = WARNING
+15 Nov 2018 20:11:05 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 169 ColNo = 16 Msg = 'The value of the local variable setting1 is not used'
+15 Nov 2018 20:11:05 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@1ba1e664
+15 Nov 2018 20:11:05 GMT:  Kind = WARNING
+15 Nov 2018 20:11:05 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 170 ColNo = 16 Msg = 'The value of the local variable setting2 is not used'
+15 Nov 2018 20:11:15 GMT: diagnostics = javax.tools.DiagnosticCollector@1294580e
+fileManager = org.eclipse.jdt.internal.compiler.tool.EclipseFileManager@56c0778e
+fileObjects = [C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\IR4.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Player.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Test.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java]
+15 Nov 2018 20:11:15 GMT: Calling 'org.eclipse.jdt.internal.compiler.tool.EclipseCompiler@6a5d0e81' with options [-Xlint:deprecation, -Xlint:unchecked, -g, -classpath, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project;C:\Users\isles\Desktop\drjava-beta-20160913-225446.exe]
+15 Nov 2018 20:11:15 GMT: Compiler call returned
+15 Nov 2018 20:11:15 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@34f68895
+15 Nov 2018 20:11:15 GMT:  Kind = WARNING
+15 Nov 2018 20:11:15 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 10 ColNo = 32 Msg = 'The value of the field Hangman.keyboard is not used'
+15 Nov 2018 20:11:15 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@577331b2
+15 Nov 2018 20:11:15 GMT:  Kind = WARNING
+15 Nov 2018 20:11:15 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 105 ColNo = 23 Msg = 'Dead code'
+15 Nov 2018 20:11:15 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@30d46e13
+15 Nov 2018 20:11:15 GMT:  Kind = WARNING
+15 Nov 2018 20:11:15 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 29 ColNo = 21 Msg = 'Resource leak: 'input' is never closed'
+15 Nov 2018 20:11:15 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@495ff6b
+15 Nov 2018 20:11:15 GMT:  Kind = WARNING
+15 Nov 2018 20:11:15 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 29 ColNo = 21 Msg = 'The value of the local variable input is not used'
+15 Nov 2018 20:11:15 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@4276d4c
+15 Nov 2018 20:11:15 GMT:  Kind = WARNING
+15 Nov 2018 20:11:15 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 84 ColNo = 24 Msg = 'The value of the local variable tempString is not used'
+15 Nov 2018 20:11:15 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@4a9732db
+15 Nov 2018 20:11:15 GMT:  Kind = WARNING
+15 Nov 2018 20:11:15 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 94 ColNo = 24 Msg = 'The value of the local variable password is not used'
+15 Nov 2018 20:11:15 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@5920696c
+15 Nov 2018 20:11:15 GMT:  Kind = WARNING
+15 Nov 2018 20:11:15 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Test.java LineNo = 2 ColNo = 8 Msg = 'The import java.util is never used'
+15 Nov 2018 20:11:15 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@72e5ab84
+15 Nov 2018 20:11:15 GMT:  Kind = ERROR
+15 Nov 2018 20:11:15 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 462 ColNo = 14 Msg = 'Resource specification not allowed here for source level below 1.7'
+15 Nov 2018 20:11:15 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@4d97f599
+15 Nov 2018 20:11:15 GMT:  Kind = WARNING
+15 Nov 2018 20:11:15 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 288 ColNo = 19 Msg = 'java.util.ArrayList is a raw type. References to generic type java.util.ArrayList<E> should be parameterized'
+15 Nov 2018 20:11:15 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@3e65071a
+15 Nov 2018 20:11:15 GMT:  Kind = WARNING
+15 Nov 2018 20:11:15 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 169 ColNo = 16 Msg = 'The value of the local variable setting1 is not used'
+15 Nov 2018 20:11:15 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@645462b3
+15 Nov 2018 20:11:15 GMT:  Kind = WARNING
+15 Nov 2018 20:11:15 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 170 ColNo = 16 Msg = 'The value of the local variable setting2 is not used'
+15 Nov 2018 20:11:59 GMT: diagnostics = javax.tools.DiagnosticCollector@5d9af0b6
+fileManager = org.eclipse.jdt.internal.compiler.tool.EclipseFileManager@62f807ed
+fileObjects = [C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\IR4.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Player.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Test.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java]
+15 Nov 2018 20:11:59 GMT: Calling 'org.eclipse.jdt.internal.compiler.tool.EclipseCompiler@50544a52' with options [-Xlint:deprecation, -Xlint:unchecked, -g, -classpath, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project;C:\Users\isles\Desktop\drjava-beta-20160913-225446.exe]
+15 Nov 2018 20:11:59 GMT: Compiler call returned
+15 Nov 2018 20:11:59 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@56af5029
+15 Nov 2018 20:11:59 GMT:  Kind = WARNING
+15 Nov 2018 20:11:59 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 10 ColNo = 32 Msg = 'The value of the field Hangman.keyboard is not used'
+15 Nov 2018 20:11:59 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@2934cfb9
+15 Nov 2018 20:11:59 GMT:  Kind = WARNING
+15 Nov 2018 20:11:59 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 105 ColNo = 23 Msg = 'Dead code'
+15 Nov 2018 20:11:59 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@49f5a535
+15 Nov 2018 20:11:59 GMT:  Kind = WARNING
+15 Nov 2018 20:11:59 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 29 ColNo = 21 Msg = 'Resource leak: 'input' is never closed'
+15 Nov 2018 20:11:59 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@36fc4879
+15 Nov 2018 20:11:59 GMT:  Kind = WARNING
+15 Nov 2018 20:11:59 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 29 ColNo = 21 Msg = 'The value of the local variable input is not used'
+15 Nov 2018 20:11:59 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@1afe6897
+15 Nov 2018 20:11:59 GMT:  Kind = WARNING
+15 Nov 2018 20:11:59 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 84 ColNo = 24 Msg = 'The value of the local variable tempString is not used'
+15 Nov 2018 20:11:59 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@15383576
+15 Nov 2018 20:11:59 GMT:  Kind = WARNING
+15 Nov 2018 20:11:59 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 94 ColNo = 24 Msg = 'The value of the local variable password is not used'
+15 Nov 2018 20:11:59 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@7100e6e9
+15 Nov 2018 20:11:59 GMT:  Kind = WARNING
+15 Nov 2018 20:11:59 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Test.java LineNo = 2 ColNo = 8 Msg = 'The import java.util is never used'
+15 Nov 2018 20:11:59 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@25ebc730
+15 Nov 2018 20:11:59 GMT:  Kind = ERROR
+15 Nov 2018 20:11:59 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 463 ColNo = 44 Msg = 'Syntax error on token ")", ; expected'
+15 Nov 2018 20:11:59 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@4c38b9ca
+15 Nov 2018 20:11:59 GMT:  Kind = WARNING
+15 Nov 2018 20:11:59 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 288 ColNo = 19 Msg = 'java.util.ArrayList is a raw type. References to generic type java.util.ArrayList<E> should be parameterized'
+15 Nov 2018 20:11:59 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@187fb6be
+15 Nov 2018 20:11:59 GMT:  Kind = WARNING
+15 Nov 2018 20:11:59 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 169 ColNo = 16 Msg = 'The value of the local variable setting1 is not used'
+15 Nov 2018 20:11:59 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@6ebe2cf6
+15 Nov 2018 20:11:59 GMT:  Kind = WARNING
+15 Nov 2018 20:11:59 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 170 ColNo = 16 Msg = 'The value of the local variable setting2 is not used'
+15 Nov 2018 20:12:03 GMT: diagnostics = javax.tools.DiagnosticCollector@737870e9
+fileManager = org.eclipse.jdt.internal.compiler.tool.EclipseFileManager@67d4a1ef
+fileObjects = [C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\IR4.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Player.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Test.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java]
+15 Nov 2018 20:12:03 GMT: Calling 'org.eclipse.jdt.internal.compiler.tool.EclipseCompiler@35bc575c' with options [-Xlint:deprecation, -Xlint:unchecked, -g, -classpath, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project;C:\Users\isles\Desktop\drjava-beta-20160913-225446.exe]
+15 Nov 2018 20:12:03 GMT: Compiler call returned
+15 Nov 2018 20:12:03 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@29d5a92a
+15 Nov 2018 20:12:03 GMT:  Kind = WARNING
+15 Nov 2018 20:12:03 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 10 ColNo = 32 Msg = 'The value of the field Hangman.keyboard is not used'
+15 Nov 2018 20:12:03 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@3dd99b24
+15 Nov 2018 20:12:03 GMT:  Kind = WARNING
+15 Nov 2018 20:12:03 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 105 ColNo = 23 Msg = 'Dead code'
+15 Nov 2018 20:12:03 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@69194482
+15 Nov 2018 20:12:03 GMT:  Kind = WARNING
+15 Nov 2018 20:12:03 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 29 ColNo = 21 Msg = 'Resource leak: 'input' is never closed'
+15 Nov 2018 20:12:03 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@5c0ca75a
+15 Nov 2018 20:12:03 GMT:  Kind = WARNING
+15 Nov 2018 20:12:03 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 29 ColNo = 21 Msg = 'The value of the local variable input is not used'
+15 Nov 2018 20:12:03 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@5894d908
+15 Nov 2018 20:12:03 GMT:  Kind = WARNING
+15 Nov 2018 20:12:03 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 84 ColNo = 24 Msg = 'The value of the local variable tempString is not used'
+15 Nov 2018 20:12:03 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@29657985
+15 Nov 2018 20:12:03 GMT:  Kind = WARNING
+15 Nov 2018 20:12:03 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 94 ColNo = 24 Msg = 'The value of the local variable password is not used'
+15 Nov 2018 20:12:03 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@a7b157f
+15 Nov 2018 20:12:03 GMT:  Kind = WARNING
+15 Nov 2018 20:12:03 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Test.java LineNo = 2 ColNo = 8 Msg = 'The import java.util is never used'
+15 Nov 2018 20:12:03 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@33f4551d
+15 Nov 2018 20:12:03 GMT:  Kind = ERROR
+15 Nov 2018 20:12:03 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 463 ColNo = 43 Msg = 'Syntax error, insert ";" to complete BlockStatements'
+15 Nov 2018 20:12:03 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@4dd686f2
+15 Nov 2018 20:12:03 GMT:  Kind = WARNING
+15 Nov 2018 20:12:03 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 288 ColNo = 19 Msg = 'java.util.ArrayList is a raw type. References to generic type java.util.ArrayList<E> should be parameterized'
+15 Nov 2018 20:12:03 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@4f7d679c
+15 Nov 2018 20:12:03 GMT:  Kind = WARNING
+15 Nov 2018 20:12:03 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 169 ColNo = 16 Msg = 'The value of the local variable setting1 is not used'
+15 Nov 2018 20:12:03 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@1d7f43e1
+15 Nov 2018 20:12:03 GMT:  Kind = WARNING
+15 Nov 2018 20:12:03 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 170 ColNo = 16 Msg = 'The value of the local variable setting2 is not used'
+15 Nov 2018 20:12:07 GMT: diagnostics = javax.tools.DiagnosticCollector@1b6bff59
+fileManager = org.eclipse.jdt.internal.compiler.tool.EclipseFileManager@5db5525f
+fileObjects = [C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\IR4.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Player.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Test.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java]
+15 Nov 2018 20:12:07 GMT: Calling 'org.eclipse.jdt.internal.compiler.tool.EclipseCompiler@48bf4dfa' with options [-Xlint:deprecation, -Xlint:unchecked, -g, -classpath, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project;C:\Users\isles\Desktop\drjava-beta-20160913-225446.exe]
+15 Nov 2018 20:12:07 GMT: Compiler call returned
+15 Nov 2018 20:12:07 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@33d8dc4
+15 Nov 2018 20:12:07 GMT:  Kind = WARNING
+15 Nov 2018 20:12:07 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 10 ColNo = 32 Msg = 'The value of the field Hangman.keyboard is not used'
+15 Nov 2018 20:12:07 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@43f8a50
+15 Nov 2018 20:12:07 GMT:  Kind = WARNING
+15 Nov 2018 20:12:07 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 105 ColNo = 23 Msg = 'Dead code'
+15 Nov 2018 20:12:07 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@249ef27a
+15 Nov 2018 20:12:07 GMT:  Kind = WARNING
+15 Nov 2018 20:12:07 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 29 ColNo = 21 Msg = 'Resource leak: 'input' is never closed'
+15 Nov 2018 20:12:07 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@28641b87
+15 Nov 2018 20:12:07 GMT:  Kind = WARNING
+15 Nov 2018 20:12:07 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 29 ColNo = 21 Msg = 'The value of the local variable input is not used'
+15 Nov 2018 20:12:07 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@4758f0e2
+15 Nov 2018 20:12:07 GMT:  Kind = WARNING
+15 Nov 2018 20:12:07 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 84 ColNo = 24 Msg = 'The value of the local variable tempString is not used'
+15 Nov 2018 20:12:07 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@3fcd8f53
+15 Nov 2018 20:12:07 GMT:  Kind = WARNING
+15 Nov 2018 20:12:07 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 94 ColNo = 24 Msg = 'The value of the local variable password is not used'
+15 Nov 2018 20:12:07 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@6c13a7f2
+15 Nov 2018 20:12:07 GMT:  Kind = WARNING
+15 Nov 2018 20:12:07 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Test.java LineNo = 2 ColNo = 8 Msg = 'The import java.util is never used'
+15 Nov 2018 20:12:07 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@642321d4
+15 Nov 2018 20:12:07 GMT:  Kind = WARNING
+15 Nov 2018 20:12:07 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 288 ColNo = 19 Msg = 'java.util.ArrayList is a raw type. References to generic type java.util.ArrayList<E> should be parameterized'
+15 Nov 2018 20:12:07 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@64fc1252
+15 Nov 2018 20:12:07 GMT:  Kind = WARNING
+15 Nov 2018 20:12:07 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 169 ColNo = 16 Msg = 'The value of the local variable setting1 is not used'
+15 Nov 2018 20:12:07 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@3718be89
+15 Nov 2018 20:12:07 GMT:  Kind = WARNING
+15 Nov 2018 20:12:07 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 170 ColNo = 16 Msg = 'The value of the local variable setting2 is not used'
+15 Nov 2018 20:16:40 GMT: diagnostics = javax.tools.DiagnosticCollector@72546aac
+fileManager = org.eclipse.jdt.internal.compiler.tool.EclipseFileManager@2a53206d
+fileObjects = [C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\IR4.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Player.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Test.java, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java]
+15 Nov 2018 20:16:40 GMT: Calling 'org.eclipse.jdt.internal.compiler.tool.EclipseCompiler@2d4d23fd' with options [-Xlint:deprecation, -Xlint:unchecked, -g, -classpath, C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project;C:\Users\isles\Desktop\drjava-beta-20160913-225446.exe]
+15 Nov 2018 20:16:40 GMT: Compiler call returned
+15 Nov 2018 20:16:40 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@6577ea0e
+15 Nov 2018 20:16:40 GMT:  Kind = WARNING
+15 Nov 2018 20:16:40 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 10 ColNo = 32 Msg = 'The value of the field Hangman.keyboard is not used'
+15 Nov 2018 20:16:40 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@6ef677f4
+15 Nov 2018 20:16:40 GMT:  Kind = WARNING
+15 Nov 2018 20:16:40 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 105 ColNo = 23 Msg = 'Dead code'
+15 Nov 2018 20:16:40 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@7bb72a95
+15 Nov 2018 20:16:40 GMT:  Kind = WARNING
+15 Nov 2018 20:16:40 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 29 ColNo = 21 Msg = 'Resource leak: 'input' is never closed'
+15 Nov 2018 20:16:40 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@176bc551
+15 Nov 2018 20:16:40 GMT:  Kind = WARNING
+15 Nov 2018 20:16:40 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 29 ColNo = 21 Msg = 'The value of the local variable input is not used'
+15 Nov 2018 20:16:40 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@4d967a28
+15 Nov 2018 20:16:40 GMT:  Kind = WARNING
+15 Nov 2018 20:16:40 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 84 ColNo = 24 Msg = 'The value of the local variable tempString is not used'
+15 Nov 2018 20:16:40 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@1002fdb9
+15 Nov 2018 20:16:40 GMT:  Kind = WARNING
+15 Nov 2018 20:16:40 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Hangman.java LineNo = 94 ColNo = 24 Msg = 'The value of the local variable password is not used'
+15 Nov 2018 20:16:40 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@52239eae
+15 Nov 2018 20:16:40 GMT:  Kind = WARNING
+15 Nov 2018 20:16:40 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\Test.java LineNo = 2 ColNo = 8 Msg = 'The import java.util is never used'
+15 Nov 2018 20:16:40 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@1b2b88f6
+15 Nov 2018 20:16:40 GMT:  Kind = WARNING
+15 Nov 2018 20:16:40 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 288 ColNo = 19 Msg = 'java.util.ArrayList is a raw type. References to generic type java.util.ArrayList<E> should be parameterized'
+15 Nov 2018 20:16:40 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@6512e681
+15 Nov 2018 20:16:40 GMT:  Kind = WARNING
+15 Nov 2018 20:16:40 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 169 ColNo = 16 Msg = 'The value of the local variable setting1 is not used'
+15 Nov 2018 20:16:40 GMT: Processing diagnostic org.eclipse.jdt.internal.compiler.tool.EclipseCompilerImpl$3$2@62fa20af
+15 Nov 2018 20:16:40 GMT:  Kind = WARNING
+15 Nov 2018 20:16:40 GMT: Name = C:\Users\isles\Documents\GitRepos\CSI131\GameProject\Game_Project\ProjectFileIO_v2.java LineNo = 170 ColNo = 16 Msg = 'The value of the local variable setting2 is not used'

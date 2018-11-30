@@ -58,8 +58,7 @@ public class IR4 {
      * Rejects null entries, any number of spaces, and non-numbers.
      * @param msg is the text that will be displayed the user to ask them to enter a value.
      * @param low is the lowest acceptable input value.
-     * @param high is the highest acceptable input value.
-     * @param errorMsg is the error message displayed when the entered value is out of range
+     * @param high is the highestt acceptable input value.
      * @return Returns an int from the keyboard. 
      */
    public static int getIntegerBetweenLowAndHigh(String msg, int low, int high, String errorMsg) {
@@ -75,7 +74,6 @@ public class IR4 {
      * Rejects null entries, any number of spaces, and non-numbers.
      * @param msg is the text that will be displayed the user to ask them to enter a value.
      * @param low is the highest unacceptable input value. 
-     * @param errorMsg is the error message displayed when the entered value is out of range
      * @return Returns an int from the keyboard. 
      */ 
    public static int getIntegerGT(String msg, int low, String errorMsg) {
@@ -107,21 +105,20 @@ public class IR4 {
    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
    /** Gets a String from the keyboard. Rejects null entry or any number of spaces.
      * @param msg is the text that will be displayed the user to ask them to enter a value.
-     * @return Returns a String from the keyboard.
-     * String x = IR4.getString 
+     * @return Returns a String from the keyboard. 
      */ 
-   public static String getString(String msg) { //Creates one instance on a string
-      String answer = ""; // instantiates the string to avoid runtime error
+   public static String getString(String msg) {
+      String answer = "";
       System.out.println(msg);
       try {
-         answer = keyboard.nextLine(); // If keyboard fails to get input, error
+         answer = keyboard.nextLine(); 
       }
       catch (Exception e) {
          System.err.println("Error reading input from user. Ending program.");
          System.exit(-1);
       } 
       
-      while (answer.replace(" ", "").equals("")) { //Replaces all spaces with nothing, if whole string equals nothing, nothing was captured
+      while (answer.replace(" ", "").equals("")) {
          System.err.println("Error: Missing input.");
          try {
             System.out.println(msg);
@@ -142,7 +139,7 @@ public class IR4 {
      */  
    public static int getInteger(String msg) {
       System.out.println(msg);
-      while (!keyboard.hasNextInt()) { //  until integer,ask for an integer 
+      while (!keyboard.hasNextInt()) {
          keyboard.nextLine();
          System.err.println("Invalid integer. Try again.");
       }
@@ -158,7 +155,7 @@ public class IR4 {
      */ 
    public static double getDouble(String msg) {
       System.out.println(msg);
-      while (!keyboard.hasNextDouble()) { // until double ask for double
+      while (!keyboard.hasNextDouble()) {
          keyboard.nextLine();
          System.err.println("Invalid number. Try again.");
       }
@@ -173,7 +170,7 @@ public class IR4 {
      * @return Returns a boolean value. True = yes; False = no. 
      */ 
    public static boolean getYorN(String msg) {
-      String answer = getString(msg); // uses other function to validate not all spaces
+      String answer = getString(msg);
       
       while (answer.compareToIgnoreCase("y")   != 0 
           && answer.compareToIgnoreCase("yes") != 0 

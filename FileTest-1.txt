@@ -1,0 +1,105 @@
+***********************************
+* Honest Hangman 1.0
+* Authors: Michael Bennett, John Gumm, Victoria Isles
+* Add as many lines of comments as you want...
+***********************************
+>>> Global Settings >>>
+The 1st setting would go here...
+The 2nd setting would go here...
+>>> End of Global Settings >>>
+===== Player#0 =====
+Jrgw
+
+12
+0
+===== Player#1 =====
+sdg
+
+7777778
+540
+===== Player#2 =====
+dagba
+
+345
+340
+===== Player#3 =====
+MyNemJeff
+
+243623
+6
+===== Player#4 =====
+Jimmy
+testpassword!3#$2
+234523
+45
+===== Player#5 =====
+Chad
+ppPooPoo
+2345
+3
+===== Player#6 =====
+Jerry
+jerry's password
+3425234
+56
+===== Player#7 =====
+johnny
+john g
+234623
+90
+===== Player#8 =====
+jog
+jog on
+345
+23
+===== Player#9 =====
+sdfbfdh
+dsfdsfds
+345
+0
+===== Player#10 =====
+sdj
+sdfsdfsdf
+0
+0
+===== Player#11 =====
+sd
+sdsdsdsd
+3
+0
+===== Player#12 =====
+John
+jojojojoj
+0
+234
+===== Player#13 =====
+skjdfhfbwkee
+kdfjhakdfhadlfld
+0
+2345
+===== Player#14 =====
+poopityscoopity
+dongshlong
+0
+0
+===== Player#15 =====
+korina
+iluvjohnny
+96000000
+0
+===== Player#16 =====
+jerry
+jerrybobby
+0
+0
+===== Player#17 =====
+rh
+jrthrtre
+0
+0
+===== Player#18 =====
+john
+pp3caigh
+0
+0
+--- End of File ---
