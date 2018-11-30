@@ -6,7 +6,7 @@ public class Medium_Game{
   //left and right leg are added to guess the word. That is 9 chances. 
  
 
-//__Constants________________________________________________________________________________________
+  //Constants////////////////////////////////////////////////////////////////////////////////////////
   //Scoring Constants
   final static int WON = 50;
   final static int LOST = 15;
@@ -32,7 +32,7 @@ public class Medium_Game{
   final static int WORD_LENGTH_MIN = 2;
   final static int WORD_LENGTH_MAX = 4;
   
-//__Hangman Display Constants________________________________________________________________________
+  //Hangman Display Constants/////////////////////////////////////////////////////////////////////////
   String[][] hangmanDisplay = {
       {" ", " ", " ", " ", " ", "_", "_", "_", "_", " "},
       {" ", " ", " ", " ", "|", " ", " ", " ", "|", " "},
@@ -58,10 +58,9 @@ public class Medium_Game{
   String[] specialLettersArray = {"Q", "X", "Y", "Z"};
   String[] guessedArray = new String[NUMBER_OF_GUESSES];
   String[] validLetters = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"};
+  //String theme = {}; This might be an ArrayList actually. Just call the appropriate ArrayList
 
-  ArrayList<String> wordList = new ArrayList<String>();
-
-//__FIELDS___________________________________________________________________________________________
+  //fields////////////////////////////////////////////////////////////////////////////////////////////
   private boolean won;
   private boolean correctGuess;
   private boolean correctVowel;
@@ -91,13 +90,13 @@ public class Medium_Game{
   private String index5;
   private String index6;
   
-  //The word arrays are down here
+  //The word arrays are down heret
   String[] wordArray = new String[size];//This is where letters will be stored when the computer can no longer find words without them.
   private String word;
  
                               
   
-//__default constructor______________________________________________________________________________
+  //default constructor///////////////////////////////////////////////////////////////////////////////
   Medium_Game(int t, String name){
     won = false;
     correctGuess = false;
@@ -115,10 +114,9 @@ public class Medium_Game{
     initializeWordArray(wordArray);
   }//end default constructor
   
-//__MAIN_____________________________________________________________________________________________
+  //main//////////////////////////////////////////////////////////////////////////////////////////////
   public void main(String[] args){  
     //Get the appropriate theme read into an array for the AI.
-    initializeThemeArray();
     
     //Intro to game mode
     displayGameIntro();
@@ -163,11 +161,9 @@ public class Medium_Game{
     
     */
   }//end main
+    
+  //getters and setters///////////////////////////////////////////////////////////////////////////////
   
-//__THEME WORD LIST ARRAY MANIPULATION_______________________________________________________________
-  
-
-//__SETTERS and GETTERS _____________________________________________________________________________  
     public void setGuess(){
       String g = IR4.getString("Please enter your guess.");
       g = g.toUpperCase();
@@ -190,7 +186,7 @@ public class Medium_Game{
       return guess;
     }//end getGuess
     
-//__METHODS__________________________________________________________________________________________
+  //methods///////////////////////////////////////////////////////////////////////////////////////////
     //DISPLAY METHODS ------------------------------------------------------------------
     private void displayGameIntro(){
       System.out.println("*******************************************************************");
@@ -230,7 +226,7 @@ public class Medium_Game{
       System.out.println("You scored a total of " + score + " points.");
     }//end displayLost
     
-//__THE HANGMAN______________________________________________________________________________________
+    //THE HANGMAN ----------------------------------------------------------------------
     private void theHangman(){
       //checks userGuess and all previous guesses against words in the array list.
       //Tells user their guess is WRONG if:
@@ -249,7 +245,7 @@ public class Medium_Game{
     
     
         
-//__CHECK GUESS______________________________________________________________________________________
+    //CHECK GUESS ----------------------------------------------------------------------
     public void checkGuess(){
       for(int i = 0; i<vowelArray.length;i++){
         if(guess.equals(vowelArray[i])){correctVowel = true;}
@@ -267,7 +263,7 @@ public class Medium_Game{
       
     }//end checkWord
     
-//__CALCULATE SCORE__________________________________________________________________________________
+    //CALCULATE SCORE ------------------------------------------------------------------
     private void calculateScore(){
       if(correctVowel){ score = score + CORRECT_VOWEL;}
       
@@ -282,7 +278,7 @@ public class Medium_Game{
       else{ score = score + LOST;}
     }//end calculateFinalScore
     
-//__UPDATING DISPLAYS________________________________________________________________________________
+    //UPDATING DISPLAYS ----------------------------------------------------------------
     private void updateHangman(){
       if(!correctGuess){
         
@@ -331,7 +327,7 @@ public class Medium_Game{
       }//update according to guessChances counter. Remember: It's backwards. 7 is good, 0 is bad.}
     }//end updateHangman
     
-//__INITIALIZE WORD ARRAY____________________________________________________________________________
+    //INITIALIZE WORD ARRAY ------------------------------------------------------------
     private void initializeWordArray(String[] word){
       for(int i = 0; i<word.length;i++){
         word[i] = "_";

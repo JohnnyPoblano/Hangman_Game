@@ -1,18 +1,18 @@
-import java.util.*;
-
-public class Medium_Game{
-  //For Medium game mode: Words between 8 and 10 letters long. 
-  //The user has until one turn after the head, neck, shoulders, body, left and right arm, 
-  //left and right leg are added to guess the word. That is 9 chances. 
+public class Quick_Game{
+ 
+  //For Quick game mode: Words between 2 and 4 letters long. 
+  //The user has until one turn after the head, body, left and right arm, 
+  //left and right leg are added to guess the word. That is 7 chances. 
  
 
-//__Constants________________________________________________________________________________________
+  //Constants////////////////////////////////////////////////////////////////////////////////////////
   //Scoring Constants
-  final static int WON = 50;
-  final static int LOST = 15;
-  final static int LESS_THAN_4 = 50;
-  final static int LESS_THAN_6 = 25;
-  final static int LESS_THAN_8 = 10;
+  final static String GAME_TYPE = "Quick Play";
+  final static int WON = 5;
+  final static int LOST = 3;
+  final static int LESS_THAN_2 = 20;
+  final static int LESS_THAN_3 = 10;
+  final static int LESS_THAN_4 = 5;
   
   final static int CORRECT_CONSONANT = 10;
   final static int CORRECT_VOWEL = 15;
@@ -32,9 +32,11 @@ public class Medium_Game{
   final static int WORD_LENGTH_MIN = 2;
   final static int WORD_LENGTH_MAX = 4;
   
+  final static String WORD_HOLDER = "_";
+  
 //__Hangman Display Constants________________________________________________________________________
   String[][] hangmanDisplay = {
-      {" ", " ", " ", " ", " ", "_", "_", "_", "_", " "},
+      {" ", " ", " ", " ", " ", "_", "_", "_", " ", " "},
       {" ", " ", " ", " ", "|", " ", " ", " ", "|", " "},
       {" ", " ", " ", " ", "|", " ", " ", " ", "^", " "},
       {" ", " ", " ", " ", "|", " ", " ", " ", " ", " "},
@@ -52,14 +54,12 @@ public class Medium_Game{
   String[] hangman5 = {" ", " ", " ", " ", "|", " ", " ", "/ ", " ", " "};//will switch with the 5th index row
   String[] hangman6 = {" ", " ", " ", " ", "|", " ", " ", "/ ", "\\", ""};//will switch with the 5th index row
    
-  //Theme Array, char's guessed Array, consonant array, vowel array, special letters array.
+//__guessed Array, consonant array, vowel array, special letters array_______________________________
   String[] vowelArray = {"A", "E", "I", "O", "U"};
   String[] consonantArray = {"B", "C", "D", "F", "G", "H", "I", "J", "K", "L", "M", "N", "P", "R", "S", "T", "V", "W"};
   String[] specialLettersArray = {"Q", "X", "Y", "Z"};
   String[] guessedArray = new String[NUMBER_OF_GUESSES];
   String[] validLetters = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"};
-
-  ArrayList<String> wordList = new ArrayList<String>();
 
 //__FIELDS___________________________________________________________________________________________
   private boolean won;
@@ -73,101 +73,113 @@ public class Medium_Game{
   private String guess;
   private String userName;
   private boolean complete;
-  private int size;
+  //private int size = IR4.getRandomNumber(WORD_LENGTH_MIN, WORD_LENGTH_MAX);
+  private int size = 3;
+  private int wordListSize;
   
-  private boolean filledIndex0 = false;
-  private boolean filledIndex1 = false;
-  private boolean filledIndex2 = false;
-  private boolean filledIndex3 = false;
-  private boolean filledIndex4 = false;
-  private boolean filledIndex5 = false;
-  private boolean filledIndex6 = false;
-  
-  private String index0; //These indexes will be how the AI checks for words 
-  private String index1; //with certain letters in certain indexes of the word. 
-  private String index2;
-  private String index3;
-  private String index4;
-  private String index5;
-  private String index6;
-  
-  //The word arrays are down here
+  WordList list = new WordList();
   String[] wordArray = new String[size];//This is where letters will be stored when the computer can no longer find words without them.
-  private String word;
- 
-                              
-  
-//__default constructor______________________________________________________________________________
-  Medium_Game(int t, String name){
+  boolean[] index = new boolean[3];//parallel to all indexes in the words. Sets each index to true/false if found.
+  boolean[] wordMatchArray = new boolean[3];//paralell to wordList. Check true/false
+//__CONSTRUCTOR______________________________________________________________________________________
+  Quick_Game(int t, String name){
     won = false;
     correctGuess = false;
     correctVowel = false;
     correctConsonant = false;
     correctSpecial = false;
     score = 0;
-   // theme = 0;
+    //theme = t;
     guessChances = NUMBER_OF_GUESSES;//will minus down with every guess
     guess = " ";
     userName = name;
     complete = false;   
-    //size = IR4.getRandomNumber(WORD_LENGTH_MIN, WORD_LENGTH_MAX);
-    size = 5;
-    initializeWordArray(wordArray);
-  }//end default constructor
-  
-//__MAIN_____________________________________________________________________________________________
-  public void main(String[] args){  
-    //Get the appropriate theme read into an array for the AI.
+    
+    initializeGuessedArray();
     initializeThemeArray();
-    
-    //Intro to game mode
-    displayGameIntro();
+    //clean word array with size
+    list.removeWords(size);
+    list.displayList();
+  }//end default constructor
+ 
 
+  
+ //__RUN GAME METHOD__________________________________________________________________________________
+  public void runGame(){ 
     
-    //while(guessChances < 0 && !won){
-      //displayHangman();  displayChances();
+    index = new boolean[size];
+    wordMatchArray = new boolean[list.getSize()];
+    
+    initializeWordArray();
+    displayGameIntro();
+    
+    while(guessChances > 0 && !won){
       displayHangman();
-      /* This stuff is blocked off so that we can work out the main menu
-      displayWord();
+      displayWordArray();
       displayChances();
-      //getGuess();
       
-      setGuess(); //has validateGuess inside, dependent on guessedArray
-      //put guess into guessArray
-      guessedArray[guessChances] = guess;
-      //theHangman();//this is the AI control method. Will tell the computer if the guess is correct or not.
+      setGuess(); 
+      guessedArray[guessChances-1] = guess;
+      
+      theHangman();//this is the AI control method. Will tell the computer if the guess is correct or not.
 
       if(correctGuess){
         checkGuess();//this checks for consonant/vowel/special letter status
+        calculateScore(); //this method uses the four booleans (correct, vowel, consonant, special) to calculate score
+        findStaticWord();//Will put last guess into a permanent index
+        initializeGuessedArray();
       }
-      //calculateScore();
-      calculateScore(); //this method uses the four booleans (correct, vowel, consonant, special) to calculate score
-      //updateHangman();
-      updateHangman();//This updates the Hang Man display
-      checkWord(); //This will check to see if the word is complete or not. If so, it will turn won to true.
       if(!correctGuess){
         guessChances--;
+        updateHangman();//This updates the Hang Man display
       }//This should make it so the guessChances only goes down on incorrect guesses. 
     }//end guessChances while loop
     
-    //Repeat third step through seventh step until WON or LOST
-    
-    //calculateScore(); this one is dependent on won status
     calculateFinalScore();
-    //displayWon(); or displayLost(); These will display the user's final score too.
     if(won){ displayWon();}
-    else{displayLost();
+    else{displayLost();}
+  
     
     //Save score and other stats. 
     //return to main menu.
     
-    */
-  }//end main
-  
-//__THEME WORD LIST ARRAY MANIPULATION_______________________________________________________________
-  
+    
+  }//end runGame
 
-//__SETTERS and GETTERS _____________________________________________________________________________  
+//__THEME ARRAY MANIPULATION METHODS_________________________________________________________________
+  
+  public void initializeThemeArray(){
+    list.addWord("APP");
+    list.addWord("SNAP");
+    list.addWord("RAID");
+    list.addWord("CAP");
+    list.addWord("TOO");
+    list.addWord("ZOO");
+    list.addWord("TAPE");
+    list.addWord("MAIN");
+    list.addWord("TAME");
+    list.addWord("LOSE");
+    list.addWord("LAME");
+    list.addWord("BAIT");
+    list.addWord("NEW");
+    list.addWord("NEWS");
+    list.addWord("TO");
+    list.addWord("AT");
+    list.addWord("CAT");
+    list.addWord("TAP");
+    list.addWord("NO");
+    list.addWord("YES");
+    list.addWord("ZAP");
+    list.addWord("BAIN");
+    list.addWord("BANE");
+    list.addWord("PUT");
+    list.addWord("PUTT");
+    list.addWord("BUT");
+    list.addWord("BUTT");
+  }//end initializeThemeArray
+  
+  
+//__SETTERS__________________________________________________________________________________________
     public void setGuess(){
       String g = IR4.getString("Please enter your guess.");
       g = g.toUpperCase();
@@ -175,8 +187,6 @@ public class Medium_Game{
         System.err.println("That is not a valid guess. Please enter ONE letter.");
         g = IR4.getString("Please enter your guess.");
       }
-      
-      //turn g into a character
       guess = g;
     }//end setGuess
     
@@ -186,15 +196,21 @@ public class Medium_Game{
       else{return false;}             
     }//end validGuess
     
+//__GETTERS__________________________________________________________________________________________    
     public String getGuess(){
       return guess;
     }//end getGuess
     
+    public int getScore(){
+      return score;
+    }//end getScore
+    
 //__METHODS__________________________________________________________________________________________
-    //DISPLAY METHODS ------------------------------------------------------------------
-    private void displayGameIntro(){
+    
+  //__DISPLAY METHODS________________________________________________________________________________
+    private static void displayGameIntro(){
       System.out.println("*******************************************************************");
-      System.out.println("       Welcome to the Quick Game Mode of The Honest Hangman!");
+      System.out.println("       Welcome to the"+ GAME_TYPE +" Mode of The Honest Hangman!");
       System.out.println("   The rules are simple: When prompted, guess a single letter.");
       System.out.println("    You have "+NUMBER_OF_GUESSES+" chances to guess the word.");
       System.out.println("              Goal: Don't let the hangman hang.");
@@ -210,11 +226,12 @@ public class Medium_Game{
       }
     }//end displayHangMan
     
-    private void displayWord(){
+    private void displayWordArray(){
       for(int i = 0; i < wordArray.length; i++){
-        System.out.print(" " + wordArray[i]);
+        System.out.print(" " + wordArray[i] + " ");
       }
-    }//end displayWord
+      System.out.println(" ");
+    }//end displayWordArray
     
     private void displayChances(){
       System.out.println("Total Guesses Left:" + guessChances);
@@ -232,40 +249,97 @@ public class Medium_Game{
     
 //__THE HANGMAN______________________________________________________________________________________
     private void theHangman(){
-      //checks userGuess and all previous guesses against words in the array list.
-      //Tells user their guess is WRONG if:
-      //           - The computer finds a word that does not contain any of the guesses. 
-        //Tells the user their guess is RIGHT if:
-      //           - The computer cannot find a word that does not contain any of the guesses.
-      //   -> When this occures:
-      //       - The computer will take the most recent user guess and locate a word containing it.
-      //           -> The computer will set the index of the guess from that word into a variable
-      //           -> If that index has already been filled in from a previous guess, it will substring the word to find the next index of the character in the word.
-      //       - It will take the index that the letter shows up that word and set that index to that letter.
-      //       - This will allow the program to then check all words with that letter in that index, against new guesses.
-      //       - The computer will reset the guessedArray every time a guess is correct. 
-      //       - If the guess is labled as correct, it will then activate checkGuess, for scoring reasons. 
+       checkMatches();
+      
+      for(int i = 0; i < wordMatchArray.length; i++){
+        if(wordMatchArray[i] = false){
+          correctGuess = false;;
+        }else{
+          correctGuess = true;
+        }
+      }
+      
+      
     }//end theHangMan
     
+    private void findStaticWord(){
+    }//end findStaticWord
     
+    private void checkMatches(){
+      initializeIndexArray();
+      for(int x = 0; x < list.getSize(); x++){
+        for(int y = 0; y < index.length; y++){
+          for(int z = 0; z < guessedArray.length; z++){
+            if(wordArray[y].equals(WORD_HOLDER)){
+              //list.getWord(x).charAt(y)
+              if(guessedArray[z].equals(list.getWord(x).charAt(y))){
+                index[y] = true;
+              }
+            }else{
+              if(guessedArray[z].equals(wordArray[y])){
+                index[y] = true;
+              }
+            }
+          }
+        }
+        checkTotalIndexMatch();
+        initializeIndexArray();
+      }                                 
+    }//end checkMatches
+    
+    private void checkTotalIndexMatch(){
+      int count = 0;
+      for(int x = 0; x < wordMatchArray.length; x++){
+        for(int y = 0; y < index.length; y++){
+          if(index[y] = true){
+            count++;
+          }
+        }
+        if(count == size){
+          wordMatchArray[x] = true;
+          count = 0;
+        }else{
+          count = 0;
+        }
+      }
+    }//end checkTotalIndexMatch
+    
+    private void initializeIndexArray(){
+      for(int i = 0; i<index.length;i++){
+        index[i] = false;
+      }
+    }//end initializeIndexArray
+      
         
 //__CHECK GUESS______________________________________________________________________________________
     public void checkGuess(){
+      checkForVowel();
+      if(!correctVowel){
+        checkForConsonant();
+      }
+      if(!correctVowel && !correctConsonant){
+        checkForSpecial();
+      }
+      
+    }//end checkGuess 
+    
+    private void checkForVowel(){
       for(int i = 0; i<vowelArray.length;i++){
         if(guess.equals(vowelArray[i])){correctVowel = true;}
       }
-      for(int i = 0; i<consonantArray.length;i++){
-        if(guess.equals(vowelArray[i])){correctConsonant = true;}
-      }
-      for(int i = 0; i<specialLettersArray.length;i++){
-        if(guess.equals(specialLettersArray[i])){ correctSpecial = true;}
-      }
-    }//end checkGuess 
+    }//end checkForVowel
     
-    public void checkWord(){
-      
-      
-    }//end checkWord
+    private void checkForConsonant(){
+      for(int j = 0; j<consonantArray.length;j++){
+        if(guess.equals(vowelArray[j])){correctConsonant = true;}
+      }
+    }//end checkForConsonant
+    
+    private void checkForSpecial(){
+      for(int k = 0; k<specialLettersArray.length;k++){
+        if(guess.equals(specialLettersArray[k])){ correctSpecial = true;}
+      }
+    }//end checkForSpecial
     
 //__CALCULATE SCORE__________________________________________________________________________________
     private void calculateScore(){
@@ -331,11 +405,17 @@ public class Medium_Game{
       }//update according to guessChances counter. Remember: It's backwards. 7 is good, 0 is bad.}
     }//end updateHangman
     
-//__INITIALIZE WORD ARRAY____________________________________________________________________________
-    private void initializeWordArray(String[] word){
-      for(int i = 0; i<word.length;i++){
-        word[i] = "_";
+//__INITIALIZE ARRAYS________________________________________________________________________________
+    private void initializeWordArray(){
+      for(int i = 0; i < wordArray.length;i++){
+        wordArray[i] = "_";
       }
     }//end initializeWordArray
     
-}//end medium game
+    private void initializeGuessedArray(){
+      for(int i = 0; i < guessedArray.length; i++){
+        guessedArray[i] = " ";
+      }
+    }//end initializeGuessedArray
+
+}//end Quick Game
