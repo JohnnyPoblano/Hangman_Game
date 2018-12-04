@@ -11,6 +11,7 @@ public class Quick_Game{
   //   - Make sure that letter is in an index that is actually the same as a word
   //   - Account for a letter being in multiple indexes
   //- Make ai check for static letters/indexes
+  //- RETHINK LOGIC??? :(
   
   
   //Constants////////////////////////////////////////////////////////////////////////////////////////
@@ -18,9 +19,9 @@ public class Quick_Game{
   final static String GAME_TYPE = "Quick Play";
   final static int WON = 5;
   final static int LOST = 3;
-  final static int LESS_THAN_2 = 20;
-  final static int LESS_THAN_3 = 10;
-  final static int LESS_THAN_4 = 5;
+  final static int LESS_THAN_3 = 20;
+  final static int LESS_THAN_4 = 10;
+  final static int LESS_THAN_5 = 5;
   
   final static int CORRECT_CONSONANT = 10;
   final static int CORRECT_VOWEL = 15;
@@ -82,15 +83,13 @@ public class Quick_Game{
   private String guess;
   private String userName;
   private boolean complete;
-  //private int size = IR4.getRandomNumber(WORD_LENGTH_MIN, WORD_LENGTH_MAX);
-  private int size = 3;
-  private int wordListSize;
+  private int size = IR4.getRandomNumber(WORD_LENGTH_MIN, WORD_LENGTH_MAX);
+
+  
   
   ArrayList<String> list = new ArrayList<>();
-  String[] copiedWords = new String[3];
-  String[] wordArray = new String[size];//This is where letters will be stored when the computer can no longer find words without them.
-  boolean[] wordMatchArray = new boolean[3];//paralell to wordList. Check true/false
-  int[] matchedGuess = new int[NUMBER_OF_GUESSES];
+  String[] wordArray = new String[size];
+  boolean[] indexFilled = new boolean[size];
 //__CONSTRUCTOR______________________________________________________________________________________
   Quick_Game(int t, String name){
     won = false;
@@ -110,12 +109,8 @@ public class Quick_Game{
     initializeThemeArray();
     //clean word array list
     removeWords();
-    //copy words from arrayList into a normal array
-    copiedWords = new String[list.size()];
-    copyWords();
     
-
-    wordMatchArray = new boolean[list.size()];
+    
     
   }//end default constructor
   
@@ -124,11 +119,11 @@ public class Quick_Game{
   //__RUN GAME METHOD__________________________________________________________________________________
   public void runGame(){ 
     
-    
+    initializeIndexFilledArray();
     initializeWordArray();
     displayGameIntro();
     
-    while(guessChances > 0){
+    while(guessChances > 0 && (!complete)){
       displayHangman();
       displayWordArray();
       displayChances();
@@ -143,18 +138,28 @@ public class Quick_Game{
       if(correctGuess){
         checkGuess();//this checks for consonant/vowel/special letter status
         calculateScore(); //this method uses the four booleans (correct, vowel, consonant, special) to calculate score
-        findStaticWord();//Will put last guess into a permanent index
-        initializeGuessedArray();
+        displayScore();
       }
       else{
         guessChances--;
         updateHangman();//This updates the Hang Man display
+        displayScore();
       }//This should make it so the guessChances only goes down on incorrect guesses.
+      complete = checkCompletion();//Checks to see if all indexes in word array are filled.
+      if(!complete){
+        if(checkForRepeats()){
+          fillInRepeats();
+        }
+      }
+      complete = checkCompletion();
     }//end guessChances while loop
+    
+
+    
     
     calculateFinalScore();
     if(guessChances == 0){ displayLost();}
-    else{displayWon();}
+    if(complete){displayWon();}
     
     
     //Save score and other stats. 
@@ -209,8 +214,15 @@ public class Quick_Game{
   
   private boolean validGuess(String g){
     //true = invalid!
-    if(g.length() > 1){ return true;}
-    else{return false;}             
+    boolean valid = true;
+    if(g.length() > 1){ valid = true;}
+    else{valid = false;}             
+    for(int i = 0; i < validLetters.length; i++){
+      if(g.equals(validLetters[i])){
+        valid = false;
+      }
+    }
+    return valid;
   }//end validGuess
   
 //__GETTERS__________________________________________________________________________________________    
@@ -270,153 +282,111 @@ public class Quick_Game{
   
 //__THE HANGMAN______________________________________________________________________________________
   private boolean theHangman(){
-    initializeMatchedGuesses();
-    initializeWordMatchArray();
-    
-    boolean correct = testGuess();
-    
-    return correct;
-  }//end theHangMan
-  
-  
-  private boolean testGuess(){ 
-
-    boolean guessInWord = true;
     boolean valid = false;
-    int validCounter = 0;
+    int index = 0;
+    int count = 0;
+    int highest = 0;
+    boolean found = checkForFound();//checkForFound sees if the letter is even in any words.
+    //System.out.println(found); // for testing
     
-    
-    if(checkForFound()){//checkForFound sees if the letter is even in any words.
-      for(int w = 0; w < copiedWords.length; w++){//If so:
-        if(wordMatchArray[w]){
-          guessInWord = testGuessesInWord(w);
-          if(guessInWord){
-            wordMatchArray[w] = true;
-          }else{
-            wordMatchArray[w] = false;
+    if(found){
+      for(int i = 0; i < size; i++){
+        System.out.println("Index" + i);//for testing
+        count = countForIndex(i);
+        if(count > highest && (!indexFilled[i])){
+          highest = count;
+          index = i;
+        }
+        else if(count == highest && (!indexFilled[i])){
+          int num = IR4.getRandomNumber(0,1);
+          if(num == 0){
+            highest = count;
+            index = i;
           }
-          System.out.println(guessInWord +" "+ wordMatchArray[w]);
         }
       }
-      validCounter = checkForFalseWords();
-      if(validCounter == copiedWords.length || validCounter == 0){
+      if(index != 9){
+        wordArray[index] = guess;
+        indexFilled[index] = true;
+        //System.out.println(wordArray[index]+ " "+ index);//for testing
+        removeWords(guess, index);
+        displayWords();//for testing
         valid = true;
-      }else{
-        valid = false;
       }
+    }else{
+      valid = false;
     }
-    if(!checkForFound()){//If not:
-      initializeGuessedArray();
-    }
-    System.out.println(checkForFound());
-    System.out.println(valid+" "+validCounter);
+    
     return valid;
-  }//end testGuess
+  }//end theHangMan
+  
   
   private boolean checkForFound(){
     boolean check = false;
     
-    for(int x = 0; x < copiedWords.length; x++){
+    for(int x = 0; x < list.size(); x++){
       for(int i = 0; i < size; i++){
-        if(guess.equals((copiedWords[x].charAt(i)+""))){
+        
+        if(guess.equals((list.get(x).charAt(i))+"")){
           check = true;
-          //System.out.println(check);
+          //System.out.println(check);//for testing
         }
-        //System.out.println(copiedWords[x].charAt(i));
+        //System.out.println(list.get(x).charAt(i));//for testing
       }
+      
     }
     return check;
   }//end checkForFound
   
-  private int checkForFalseWords(){
-    int sum = 0; 
-    for(int i = 0; i < copiedWords.length; i++){
-      if(wordMatchArray[i]){
-        sum++;
+  private int countForIndex(int i){
+    int count = 0;
+    String word;
+    
+    for(int x = 0; x < list.size(); x++){
+      word = list.get(x);
+      //System.out.println(word);//for testing
+      //System.out.println(word.charAt(i));// for testing
+      //System.out.println(guess.equals((word.charAt(i))+""));//for testing
+      if(guess.equals((word.charAt(i))+"")){
+        count++;
       }
     }
-    return sum;
-  }//end checkForFalseWords
+    
+    System.out.println(count);//for testing
+    return count;
+  }//end countForIndex
   
-  private boolean testGuessesInWord(int w){
-    initializeMatchedGuesses();  
-    if(wordMatchArray[w]){
-      for(int x = 0; x < guessedArray.length; x++){
-        for(int i = 0; i < size; i++){
-          if(!guessedArray[x].equals(WORD_HOLDER)){
-            if(guessedArray[x].equals((copiedWords[w].charAt(i))+"")){
-              matchedGuess[x] = 1;
-              System.out.println(guessedArray[x]);
-              System.out.println(matchedGuess[x]);
-            }
-          }
-        }
-      }
-      int sum = countMatchedGuesses();
-      System.out.println(sum);
-      if(sum == round-1){
-        return false;
-      }else{
-        return true;
-      }
-    }else{
-      return false;
-    }
-  }//end testGuessesInWord
-  
-  private int countMatchedGuesses(){
-    int sum = 0;
-    for(int i = 0; i < matchedGuess.length; i++){
-      sum += matchedGuess[i];
-    }
-    return sum;
-  }//end countMatchingGuess
-  
-  private void initializeMatchedGuesses(){
-    for(int i = 0; i < matchedGuess.length; i++){
-      matchedGuess[i] = 0;
-    }
-  }//end initializeMatchingGuess
-  
-  private void initializeWordMatchArray(){
-    for(int i = 0; i< wordMatchArray.length; i++){
-      wordMatchArray[i] = true;
-    }
-  }//end initializeWordMatchArray
-  
-  private void findStaticWord(){
-    int i = IR4.getRandomNumber(0, size-1);
-    wordArray[i] = guess;
-    while(invalidIndex(i)){
-      i = IR4.getRandomNumber(0, size-1);
-      wordArray[i] = guess;
-    }      
-  }//end findStaticWord
-  
-  private boolean invalidIndex(int i){
-    boolean valid = true;
-    for(int x = 0; x < copiedWords.length; x++){
-      if(wordArray[i].equals(copiedWords[x].charAt(i))){
+  private boolean checkForRepeats(){
+    boolean valid = false;
+    
+    String word = list.get(0);
+    String indexChar = (word.charAt(0)+" ");
+    
+    for(int i = 1; i < size; i++){
+      if(indexChar.equals(word.charAt(i)+" ")){
         valid = true;
-      }else{
-        valid = false;
       }
     }
+    
     return valid;
-  }//end invalidIndex
+  }//end checkForRepeats
   
-  
+  private void fillInRepeats(){
+    String word = list.get(0);
+    String indexChar = (word.charAt(0) + " ");
+    
+    for(int i = 0; i < wordArray.length; i++){
+      if(indexChar.equals(word.charAt(i) + " ")){
+        wordArray[i] = indexChar;
+      }
+    }
+  }//end fillInRepeats
   
 //__CHECK GUESS______________________________________________________________________________________
   public void checkGuess(){
+    checkForConsonant();
     checkForVowel();
-    if(!correctVowel){
-      checkForConsonant();
-    }
-    if(!correctVowel && !correctConsonant){
-      checkForSpecial();
-    }
-    
+    checkForSpecial();
   }//end checkGuess 
   
   private void checkForVowel(){
@@ -427,7 +397,7 @@ public class Quick_Game{
   
   private void checkForConsonant(){
     for(int j = 0; j<consonantArray.length;j++){
-      if(guess.equals(vowelArray[j])){correctConsonant = true;}
+      if(guess.equals(consonantArray[j])){correctConsonant = true;}
     }
   }//end checkForConsonant
   
@@ -437,18 +407,44 @@ public class Quick_Game{
     }
   }//end checkForSpecial
   
+  private boolean checkCompletion(){
+    int checkCounter = 0;
+    for(int i = 0; i < wordArray.length; i++){
+      if(!(wordArray[i].equals(WORD_HOLDER))){
+        checkCounter++;
+      }
+    }
+    if(checkCounter == size){
+      return true;
+    }else{
+      return false;
+    }
+  }//end checkCompletion
+  
 //__CALCULATE SCORE__________________________________________________________________________________
   private void calculateScore(){
     if(correctVowel){ score = score + CORRECT_VOWEL;}
     
-    if(correctConsonant){ score = score + CORRECT_CONSONANT;}
+    else if(correctConsonant){ score = score + CORRECT_CONSONANT;}
     
-    if(correctSpecial){ score = score + CORRECT_SPECIAL;}
+    else if(correctSpecial){ score = score + CORRECT_SPECIAL;}
     
   }//end calculateScore
   
   private void calculateFinalScore(){
-    if(won){ score = score + WON;}
+    if(complete){ 
+      score = score + WON;
+      if(round < 3){
+        score = score + LESS_THAN_3;
+      }
+      if(round < 4){
+        score = score + LESS_THAN_4;
+      }
+      if(round < 5){
+        score = score + LESS_THAN_5;
+      }
+    }
+    
     else{ score = score + LOST;}
   }//end calculateFinalScore
   
@@ -508,6 +504,12 @@ public class Quick_Game{
     }
   }//end initializeWordArray
   
+  private void displayWords(){
+    for(int i = 0; i < list.size(); i++){
+      System.out.println(list.get(i));
+    }
+  }//end displayWords
+  
   private void initializeGuessedArray(){
     for(int i = 0; i < guessedArray.length; i++){
       guessedArray[i] = WORD_HOLDER;
@@ -515,17 +517,29 @@ public class Quick_Game{
   }//end initializeGuessedArray
   
   private void removeWords(){
-    for(int i = list.size()-1; i > 0; i--){
+    for(int i = list.size()-1; i >= 0; i--){
       if(list.get(i).length() > size || list.get(i).length() < size){
         list.remove(i);
       }
     }
   }//end removeWords
   
-  private void copyWords(){
-    for(int i = 0; i < list.size(); i++){
-      copiedWords[i] = list.get(i);
+  private void removeWords(String guess, int index){
+    boolean valid;
+      for(int x = list.size()-1; x >= 0; x--){
+        if(guess.equals((list.get(x).charAt(index)+""))){
+          valid = true;
+        }else{
+          list.remove(x);
+        }
     }
-  }//end copyWords
+  }//end removeWords(String, int)
+  
+  private void initializeIndexFilledArray(){
+    for(int i = 0; i < indexFilled.length; i++){
+      indexFilled[i] = false;
+    }
+  }//end initializeIndexFilledArray
+  
   
 }//end Quick Game
