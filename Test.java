@@ -7,12 +7,12 @@ public class Test {
 
         //ProjectFileIO_v2.runFileIO();
 
-        /*
+        
         ArrayList<String> myArrayList = new ArrayList<String>();
-        myArrayList = ProjectFileIO_v2.getDictionary("TestLibrary.txt");
+        myArrayList = ProjectFileIO_v2.getDictionary("WesternWordList.txt");
         System.out.println(myArrayList.toString());
         System.out.println(myArrayList.get(0).charAt(0));
-        */
+        
         /*
         ArrayList<Player> players = new ArrayList<Player>();
         players = ProjectFileIO_v2.getTopTen();
