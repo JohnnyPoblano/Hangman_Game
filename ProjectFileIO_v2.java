@@ -409,7 +409,14 @@ public class ProjectFileIO_v2 {
 
         } catch (FileNotFoundException e) {
             System.out.println("File not found exception: " + e.getMessage());    
-        } 
+        }
+
+        // Make all letters in all words capital
+        for (int i = 0; i < WordArrayList.size(); i++) {
+            String temp = WordArrayList.get(i);
+            temp = temp.toUpperCase();
+            WordArrayList.set(i, temp);
+        }
 
         return WordArrayList;
     }
