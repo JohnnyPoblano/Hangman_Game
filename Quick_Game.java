@@ -71,7 +71,7 @@ public class Quick_Game{
   String[] validLetters = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"};
   
 //__FIELDS___________________________________________________________________________________________
-  private boolean won;
+  
   private boolean correctGuess;
   private boolean correctVowel;
   private boolean correctConsonant;
@@ -84,15 +84,17 @@ public class Quick_Game{
   private String userName;
   private boolean complete;
   private int size = IR4.getRandomNumber(WORD_LENGTH_MIN, WORD_LENGTH_MAX);
-
+  private int listSize;
+  
   
   
   ArrayList<String> list = new ArrayList<>();
   String[] wordArray = new String[size];
   boolean[] indexFilled = new boolean[size];
+  
 //__CONSTRUCTOR______________________________________________________________________________________
   Quick_Game(int t, String name){
-    won = false;
+    
     correctGuess = false;
     correctVowel = false;
     correctConsonant = false;
@@ -109,7 +111,7 @@ public class Quick_Game{
     initializeThemeArray();
     //clean word array list
     removeWords();
-    
+    listSize = list.size();
     
     
   }//end default constructor
@@ -124,6 +126,8 @@ public class Quick_Game{
     displayGameIntro();
     
     while(guessChances > 0 && (!complete)){
+      
+      
       displayHangman();
       displayWordArray();
       displayChances();
@@ -134,28 +138,30 @@ public class Quick_Game{
       guessedArray[round-1] = guess;
       
       correctGuess = theHangman();//this is the AI control method. Will tell the computer if the guess is correct or not.
+      System.out.println(listSize);
+      if(list.size() == 1){
+        fillInRepeats();
+      }
       
       if(correctGuess){
         checkGuess();//this checks for consonant/vowel/special letter status
         calculateScore(); //this method uses the four booleans (correct, vowel, consonant, special) to calculate score
         displayScore();
-      }
-      else{
+
+        
+      }else{
         guessChances--;
         updateHangman();//This updates the Hang Man display
         displayScore();
       }//This should make it so the guessChances only goes down on incorrect guesses.
-      complete = checkCompletion();//Checks to see if all indexes in word array are filled.
-      if(!complete){
-        if(checkForRepeats()){
-          fillInRepeats();
-        }
+
+      if(list.size() == 1){
+        fillInRepeats();
       }
       complete = checkCompletion();
+      
+      
     }//end guessChances while loop
-    
-
-    
     
     calculateFinalScore();
     if(guessChances == 0){ displayLost();}
@@ -291,7 +297,7 @@ public class Quick_Game{
     
     if(found){
       for(int i = 0; i < size; i++){
-        System.out.println("Index" + i);//for testing
+        //System.out.println("Index" + i);//for testing
         count = countForIndex(i);
         if(count > highest && (!indexFilled[i])){
           highest = count;
@@ -310,6 +316,7 @@ public class Quick_Game{
         indexFilled[index] = true;
         //System.out.println(wordArray[index]+ " "+ index);//for testing
         removeWords(guess, index);
+        listSize = list.size();
         displayWords();//for testing
         valid = true;
       }
@@ -352,68 +359,104 @@ public class Quick_Game{
       }
     }
     
-    System.out.println(count);//for testing
+    
+    //System.out.println(count);//for testing
     return count;
   }//end countForIndex
   
   private boolean checkForRepeats(){
-    boolean valid = false;
-    
+    boolean repeats = false;
     String word = list.get(0);
-    String indexChar = (word.charAt(0)+" ");
+    String char1;
+    String char2;
     
-    for(int i = 1; i < size; i++){
-      if(indexChar.equals(word.charAt(i)+" ")){
-        valid = true;
+    for(int i = 0; i < size; i ++){
+      for(int j = 0; j < size; j++){
+        
+        char1 = word.charAt(i) + " ";
+        System.out.println(char1);
+        char2 = word.charAt(j) + " ";
+        System.out.println(char2);
+        
+        if(char1.equals(char2)){
+          System.out.println(char1 + " " + char2);
+          repeats = true;
+        }else{
+          repeats = false;
+        }
       }
     }
     
-    return valid;
+    System.out.println(repeats);
+    return repeats;
   }//end checkForRepeats
+  
   
   private void fillInRepeats(){
     String word = list.get(0);
-    String indexChar = (word.charAt(0) + " ");
+    System.out.println(word); // for testing
+    
+    //if a letter in the workingWord array is in more than one index in the wordList word, 
+    //fill in those indexes with that letter in the workingWord
     
     for(int i = 0; i < wordArray.length; i++){
-      if(indexChar.equals(word.charAt(i) + " ")){
-        wordArray[i] = indexChar;
+      for(int j = 0; j < size; j++){
+        if(wordArray[i].equals(word.charAt(j)+" ")){
+          wordArray[j] = word.charAt(j)+" ";
+        }
       }
     }
+    
+    
   }//end fillInRepeats
   
 //__CHECK GUESS______________________________________________________________________________________
   public void checkGuess(){
+    correctConsonant = false;
+    correctVowel = false;
+    correctSpecial = false;
+    
     checkForConsonant();
-    checkForVowel();
-    checkForSpecial();
+    if(!correctConsonant){
+      checkForVowel();
+    }
+    if(!correctConsonant && !correctVowel){
+      checkForSpecial();
+    }
   }//end checkGuess 
   
   private void checkForVowel(){
     for(int i = 0; i<vowelArray.length;i++){
-      if(guess.equals(vowelArray[i])){correctVowel = true;}
+      if(guess.equals(vowelArray[i])){correctVowel = true;
+      }
     }
   }//end checkForVowel
   
   private void checkForConsonant(){
     for(int j = 0; j<consonantArray.length;j++){
-      if(guess.equals(consonantArray[j])){correctConsonant = true;}
+      if(guess.equals(consonantArray[j])){correctConsonant = true;
+      }
     }
   }//end checkForConsonant
   
   private void checkForSpecial(){
     for(int k = 0; k<specialLettersArray.length;k++){
-      if(guess.equals(specialLettersArray[k])){ correctSpecial = true;}
+      if(guess.equals(specialLettersArray[k])){ correctSpecial = true;
+      }
     }
   }//end checkForSpecial
   
   private boolean checkCompletion(){
+    boolean valid = true;
     int checkCounter = 0;
     for(int i = 0; i < wordArray.length; i++){
-      if(!(wordArray[i].equals(WORD_HOLDER))){
+      if(wordArray[i].equals(WORD_HOLDER)){
+        valid = true;
+      }else{
         checkCounter++;
       }
     }
+    System.out.println(checkCounter);
     if(checkCounter == size){
       return true;
     }else{
@@ -526,12 +569,12 @@ public class Quick_Game{
   
   private void removeWords(String guess, int index){
     boolean valid;
-      for(int x = list.size()-1; x >= 0; x--){
-        if(guess.equals((list.get(x).charAt(index)+""))){
-          valid = true;
-        }else{
-          list.remove(x);
-        }
+    for(int x = list.size()-1; x >= 0; x--){
+      if(guess.equals((list.get(x).charAt(index)+""))){
+        valid = true;
+      }else{
+        list.remove(x);
+      }
     }
   }//end removeWords(String, int)
   
