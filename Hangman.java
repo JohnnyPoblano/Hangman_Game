@@ -13,8 +13,9 @@
         public static void main(String[] args) {  
             //Create an array to hold the game type choices 
             int[] gameType = new int[2];// putting this in main so that it can be accessed outside of the menu 
-            Menu.menu(gameType);
-            
+           // Menu.menu(gameType);
+            Quick_Game quick = new Quick_Game(1, "Vicky");
+            quick.runGame();
  
         }//end of main 
     }//end of Hangman class 
