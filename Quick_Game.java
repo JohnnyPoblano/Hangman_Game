@@ -298,7 +298,7 @@ public class Quick_Game{
   //__DISPLAY METHODS________________________________________________________________________________
   private void displayGameIntro(){
     System.out.println("*******************************************************************");
-    System.out.println("  Welcome, "+ userName +" to the"+ GAME_TYPE +" Mode of The Honest Hangman!");
+    System.out.println("  Welcome, "+ userName +" to the "+ GAME_TYPE +" Mode of The Honest Hangman!");
     System.out.println("   The rules are simple: When prompted, guess a single letter.");
     System.out.println("                Goal: Don't let the hangman hang.");
     System.out.println("*******************************************************************\n");
@@ -330,14 +330,53 @@ public class Quick_Game{
   
   private void displayWon(){
     //Possible expand on possible winning messages
-    System.out.println("Congratulations! " + userName+ ", you won!");
+    int random = IR4.getRandomNumber(0,5);
+    if(random == 0){
+      System.out.println("Congratulations! " + userName+ ", you won!");
+    }
+    if(random == 1){
+      System.out.println(userName + ", you saved that poor man from a dreaful fate.");
+    }
+    if(random == 2){
+      System.out.println("Another man walks free. Good job, " + userName + ".");
+    }
+    if(random == 3){
+      System.out.println("That could have been... gruesome.");
+    }
+    if(random == 4){
+      System.out.println("Congratualtions, "+ userName + ". You've won a boost in confidence!");
+    }
+    if(random == 5){
+      System.out.println("You sure do know your vocabulary, " + userName + ".");
+    }
     System.out.println("You scored a total of " + score + " points.");
   }//end displayWon
   
   private void displayLost(){
     //Possible expand on possible losing messages
-    System.out.println("And the hangman is hung. You have lost.");
-    System.out.println("You scored a total of " + score + " points.");
+     int random = IR4.getRandomNumber(0,6);
+    if(random == 0){
+      System.out.println("And the hangman is hung. You have lost.");
+    }
+    if(random == 1){
+      System.out.println("You're not very good at this, are you, " + userName + ".");
+    }
+    if(random == 2){
+      System.out.println("Not only did you lose the game, but you've now lost th ability to smell anything red.");
+    }
+    if(random == 3){
+      System.out.println("Congratualtions. You know as much as a fifth grader. Maybe.");
+    }
+    if(random == 4){
+      System.out.println("I told you he would hang, didn't I, " + userName + ".");
+    }
+    if(random == 5){
+      System.out.println("I hope your other qualities are more attractive, " + userName + ".");
+    }
+    if(random == 6){
+      System.out.println("I hope you don't want to play again, " + userName+ ". We'll need to find someone else to hang.");
+    }
+      System.out.println("You scored a total of " + score + " points.");
   }//end displayLost
   
   private void displayGuessedArray(){
