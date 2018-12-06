@@ -135,7 +135,7 @@ public class Quick_Game{
       round++;
       
       setGuess(); 
-      guessedArray[round-1] = guess;
+      
       
       correctGuess = theHangman();//this is the AI control method. Will tell the computer if the guess is correct or not.
       
@@ -151,6 +151,8 @@ public class Quick_Game{
         //displayScore(); //For testing
       }//This should make it so the guessChances only goes down on incorrect guesses.
       
+      guessedArray[round-1] = guess;
+
       complete = checkCompletion();
       
       
@@ -159,9 +161,11 @@ public class Quick_Game{
     calculateFinalScore();
     if(guessChances == 0){ displayLost();}
     if(complete){displayWon();}
-    
-    
-    //Save score and other stats. 
+  
+
+    // Save score and other stats.
+    ProjectFileIO_v2.saveStats(userName, score);
+
     //return to main menu.
     
     

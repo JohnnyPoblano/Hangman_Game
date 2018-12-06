@@ -14,7 +14,7 @@
             //Create an array to hold the game type choices 
             int[] gameType = new int[2];// putting this in main so that it can be accessed outside of the menu 
            // Menu.menu(gameType);
-            Quick_Game quick = new Quick_Game(1, "Vicky");
+            Quick_Game quick = new Quick_Game(1, "");
             quick.runGame();
  
         }//end of main 
