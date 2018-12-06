@@ -449,6 +449,9 @@ public class ProjectFileIO_v2 {
             player.setHighScore(score);
         }
 
+        // Increment times played
+        player.setNumberOfTimesPlayed(player.getNumberOfTimesPlayed()+1);
+
         // Write file
         try {
             writeFile();
