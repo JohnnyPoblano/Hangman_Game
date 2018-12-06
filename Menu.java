@@ -45,6 +45,8 @@
                 //skip the next section if it is quick game 
                 if(s1.equals("1")){ 
                     s2 = "1"; 
+                    Quick_Game quick = new Quick_Game(1, "Vicky");
+                    quick.runGame();
                 }  
                 else if(s1.equals("5")) { 
                         s2 = "0";             
