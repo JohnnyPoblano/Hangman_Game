@@ -6,14 +6,6 @@ public class Quick_Game{
   //The user has until one turn after the head, body, left and right arm, 
   //left and right leg are added to guess the word. That is 7 chances. 
   
-  //TO DO:
-  //- Make static letter index if correct
-  //   - Make sure that letter is in an index that is actually the same as a word
-  //   - Account for a letter being in multiple indexes
-  //- Make ai check for static letters/indexes
-  //- RETHINK LOGIC??? :(
-  
-  
   //Constants////////////////////////////////////////////////////////////////////////////////////////
   //Scoring Constants
   final static String GAME_TYPE = "Quick Play";
@@ -65,9 +57,9 @@ public class Quick_Game{
   
 //__guessed Array, consonant array, vowel array, special letters array_______________________________
   String[] vowelArray = {"A", "E", "I", "O", "U"};
-  String[] consonantArray = {"B", "C", "D", "F", "G", "H", "I", "J", "K", "L", "M", "N", "P", "R", "S", "T", "V", "W"};
+  String[] consonantArray = {"B", "C", "D", "F", "G", "H", "J", "K", "L", "M", "N", "P", "R", "S", "T", "V", "W"};
   String[] specialLettersArray = {"Q", "X", "Y", "Z"};
-  String[] guessedArray = new String[NUMBER_OF_GUESSES];
+  String[] guessedArray = new String[NUMBER_OF_GUESSES+WORD_LENGTH_MAX];
   String[] validLetters = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"};
   
 //__FIELDS___________________________________________________________________________________________
@@ -77,7 +69,7 @@ public class Quick_Game{
   private boolean correctConsonant;
   private boolean correctSpecial;
   private int score;
-  // private int theme;
+  private int theme;
   private int guessChances;
   private int round;
   private String guess;
@@ -100,7 +92,7 @@ public class Quick_Game{
     correctConsonant = false;
     correctSpecial = false;
     score = 0;
-    //theme = t;
+    theme = t;
     guessChances = NUMBER_OF_GUESSES;//will minus down with every guess
     round = 0;
     guess = " ";
@@ -125,46 +117,48 @@ public class Quick_Game{
     initializeWordArray();
     displayGameIntro();
     
-    while(guessChances > 0 && (!complete)){   
+    while(guessChances > 0 && (!complete)){ 
+      round++;
+      
+      correctVowel = false;
+      correctConsonant = false;
+      correctSpecial = false;
       
       displayHangman();
       displayWordArray();
       //displayChances(); //For testing: The hangman display shows current status of guesses good enough.
       displayGuessedArray();
-      displayScore();
-      round++;
-      
+      displayScore();  
+      System.out.println("Round: " + round); //for testing
       setGuess(); 
-      
-      
+
+      guessedArray[round-1] = guess;
+ 
       correctGuess = theHangman();//this is the AI control method. Will tell the computer if the guess is correct or not.
       
       if(correctGuess){
         checkGuess();//this checks for consonant/vowel/special letter status
         calculateScore(); //this method uses the four booleans (correct, vowel, consonant, special) to calculate score
-        //displayScore(); //for Testing
-        
+        displayScore(); //for Testing    
         
       }else{
         guessChances--;
         updateHangman();//This updates the Hang Man display
-        //displayScore(); //For testing
+        displayScore(); //For testing
       }//This should make it so the guessChances only goes down on incorrect guesses.
-      
-      guessedArray[round-1] = guess;
-
+      System.out.println("\n\n\n\n");
       complete = checkCompletion();
       
       
     }//end guessChances while loop
+    displayHangman();
+    displayWordArray();
+    displayGuessedArray();
     
     calculateFinalScore();
     if(guessChances == 0){ displayLost();}
     if(complete){displayWon();}
   
-
-    // Save score and other stats.
-    ProjectFileIO_v2.saveStats(userName, score);
 
     //return to main menu.
     
@@ -174,33 +168,42 @@ public class Quick_Game{
 //__THEME ARRAY MANIPULATION METHODS_________________________________________________________________
   
   public void initializeThemeArray(){
-    list.add("APP");
-    list.add("SNAP");
-    list.add("RAID");
-    list.add("CAP");
-    list.add("TOO");
-    list.add("ZOO");
-    list.add("TAPE");
-    list.add("MAIN");
-    list.add("TAME");
-    list.add("LOSE");
-    list.add("LAME");
-    list.add("BAIT");
-    list.add("NEW");
-    list.add("NEWS");
-    list.add("TO");
-    list.add("AT");
-    list.add("CAT");
-    list.add("TAP");
-    list.add("NO");
-    list.add("YES");
-    list.add("ZAP");
-    list.add("BAIN");
-    list.add("BANE");
-    list.add("PUT");
-    list.add("PUTT");
-    list.add("BUT");
-    list.add("BUTT");
+    // THIS STUFF IS FOR TESTING______________
+    if(theme == 0){
+      list.add("TO");
+      list.add("AT");
+      list.add("IF");
+      list.add("NO");
+      list.add("SO");
+      list.add("FOR");
+      list.add("YES");
+      list.add("NEW");
+      list.add("PAT");
+      list.add("CAT");
+      list.add("SAT");
+      list.add("SIT");
+      list.add("TOP");
+      list.add("PUT");
+      list.add("BUT");
+      list.add("BAIN");
+      list.add("PAIN");
+      list.add("BANE");
+      list.add("TAME");
+      list.add("LAME");
+      list.add("NEWS");
+      
+    }
+    //_________________________________________
+    
+    if(theme == 1){
+      //initialize the wordList (variable list) to a txt file
+    }
+    if(theme == 2){
+      //initialize the wordList (variable list) to a txt file
+    }
+    if(theme == 3){
+      //initialize the wordList (variable list) to a txt file
+    }
   }//end initializeThemeArray
   
   
@@ -208,9 +211,12 @@ public class Quick_Game{
   public void setGuess(){
     String g = IR4.getString("Please enter your guess.");
     g = g.toUpperCase();
-    while(validGuess(g)){
+    boolean valid = validGuess(g);
+    while(valid){
       System.err.println("That is not a valid guess. \nPlease enter a single letter you have not previously guessed.");
       g = IR4.getString("Please enter your guess.");
+      g = g.toUpperCase();
+      valid = validGuess(g);
     }
     guess = g;
   }//end setGuess
@@ -218,9 +224,14 @@ public class Quick_Game{
   private boolean validGuess(String g){
     //true = invalid!
     boolean valid = false;
-    boolean length = checkGuessLength(g);//false = too long or too short
-    boolean validLetter = checkValidLetters(g);//false = not a valid letter
-    boolean notGuessed = checkPreviouslyGuessed(g);//true = guessed
+    boolean length = true;
+    boolean validLetter = true;
+    boolean notGuessed = false;
+
+    
+    length = checkGuessLength(g);//false = too long or too short
+    validLetter = checkValidLetters(g);//false = not a valid letter
+    notGuessed = checkPreviouslyGuessed(g);//true = guessed
     
     if(!length){
       valid = true;
@@ -261,10 +272,10 @@ public class Quick_Game{
   private boolean checkPreviouslyGuessed(String g){
     boolean valid = false;
     for(int x = 0; x < guessedArray.length; x++){
-        if(g.equals(guessedArray[x])){
-          valid = true;
-        }
+      if(g.equals(guessedArray[x])){
+        valid = true;
       }
+    }
     System.out.println("Previously guessed?: " + valid);//for testing
     return valid; 
   }//end checkPreviouslyGuessed
@@ -281,12 +292,11 @@ public class Quick_Game{
 //__METHODS__________________________________________________________________________________________
   
   //__DISPLAY METHODS________________________________________________________________________________
-  private static void displayGameIntro(){
+  private void displayGameIntro(){
     System.out.println("*******************************************************************");
-    System.out.println("       Welcome to the"+ GAME_TYPE +" Mode of The Honest Hangman!");
+    System.out.println("  Welcome, "+ userName +" to the"+ GAME_TYPE +" Mode of The Honest Hangman!");
     System.out.println("   The rules are simple: When prompted, guess a single letter.");
-    System.out.println("    You have "+NUMBER_OF_GUESSES+" chances to guess the word.");
-    System.out.println("              Goal: Don't let the hangman hang.");
+    System.out.println("                Goal: Don't let the hangman hang.");
     System.out.println("*******************************************************************\n");
   }//end displayShortGameIntro
   
@@ -315,11 +325,13 @@ public class Quick_Game{
   }//end displayChances
   
   private void displayWon(){
-    System.out.println("Congratulations! You won!");
+    //Possible expand on possible winning messages
+    System.out.println("Congratulations! " + userName+ ", you won!");
     System.out.println("You scored a total of " + score + " points.");
   }//end displayWon
   
   private void displayLost(){
+    //Possible expand on possible losing messages
     System.out.println("And the hangman is hung. You have lost.");
     System.out.println("You scored a total of " + score + " points.");
   }//end displayLost
@@ -474,27 +486,29 @@ public class Quick_Game{
   private void calculateScore(){
     if(correctVowel){ score = score + CORRECT_VOWEL;}
     
-    else if(correctConsonant){ score = score + CORRECT_CONSONANT;}
+    if(correctConsonant){ score = score + CORRECT_CONSONANT;}
     
-    else if(correctSpecial){ score = score + CORRECT_SPECIAL;}
+    if(correctSpecial){ score = score + CORRECT_SPECIAL;}
     
   }//end calculateScore
   
   private void calculateFinalScore(){
-    if(complete){ 
-      score = score + WON;
-      if(round < 3){
-        score = score + LESS_THAN_3;
-      }
-      if(round < 4){
-        score = score + LESS_THAN_4;
-      }
-      if(round < 5){
-        score = score + LESS_THAN_5;
-      }
+    
+    if(round < 3){
+      score = score + LESS_THAN_3;//LESS_THAN_3 = 20
+    }
+    else if(round < 4){
+      score = score + LESS_THAN_4;//LESS_THAN_4 = 10
+    }
+    else if(round < 5){
+      score = score + LESS_THAN_5;//LESS_THAN_5 = 5
     }
     
-    else{ score = score + LOST;}
+    if(complete){ 
+      score = score + WON;
+    }else{ 
+      score = score + LOST;
+    }
   }//end calculateFinalScore
   
 //__UPDATING DISPLAYS________________________________________________________________________________
