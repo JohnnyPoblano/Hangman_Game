@@ -170,6 +170,8 @@ public class Quick_Game{
   public void initializeThemeArray(){
     // THIS STUFF IS FOR TESTING______________
     if(theme == 0){
+      
+      /*
       list.add("TO");
       list.add("AT");
       list.add("IF");
@@ -191,18 +193,20 @@ public class Quick_Game{
       list.add("TAME");
       list.add("LAME");
       list.add("NEWS");
+      */
+      list = ProjectFileIO_v2.getDictionary("EnglishWordList.txt");
       
     }
     //_________________________________________
     
     if(theme == 1){
-      //initialize the wordList (variable list) to a txt file
+      list = ProjectFileIO_v2.getDictionary("FantasyWordList.txt");
     }
     if(theme == 2){
-      //initialize the wordList (variable list) to a txt file
+      list = ProjectFileIO_v2.getDictionary("SciFiWordList.txt");
     }
     if(theme == 3){
-      //initialize the wordList (variable list) to a txt file
+      list = ProjectFileIO_v2.getDictionary("WesternWordList.txt");
     }
   }//end initializeThemeArray
   
