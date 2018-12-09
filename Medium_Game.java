@@ -91,7 +91,7 @@ public class Medium_Game{
   private String guess;
   private String userName;
   private boolean complete;
-  private int size = 5; //IR4.getRandomNumber(WORD_LENGTH_MIN, WORD_LENGTH_MAX);
+  private int size = IR4.getRandomNumber(WORD_LENGTH_MIN, WORD_LENGTH_MAX);
   
   
   
@@ -191,9 +191,8 @@ public class Medium_Game{
     //5-7 word length
     if(theme == 0){
       
-      
-      list.add("AIOUY");
       /*
+      list.add("AIOUY");
       list.add("AT");
       list.add("IF");
       list.add("NO");
@@ -558,13 +557,13 @@ public class Medium_Game{
   
   private void calculateFinalScore(){
     
-    if(round < 3){
+    if(round < 6){
       score = score + LESS_THAN_6;
     }
-    else if(round < 4){
+    else if(round < 7){
       score = score + LESS_THAN_7;
     }
-    else if(round < 5){
+    else if(round < 8){
       score = score + LESS_THAN_8;
     }
     
@@ -577,23 +576,7 @@ public class Medium_Game{
   
 //__UPDATING DISPLAYS________________________________________________________________________________
   private void updateHangman(){
-    /*
-  String[] hangmanHead =      {" ", " ", " ", " ", " ", "|", " ", " ", "(-", "_", "-)", " ", " "}; //switches at 2nd
-  String[] hangmanNeck =      {" ", " ", " ", " ", " ", "|", " ", "  ", " ", "|", "  ", " ", " "}; //switches at 3rd
-  String[] hangmanShoulders = {" ", " ", " ", " ", " ", "|", " ", " ", " _", "|", "_ ", " ", " "}; //switches at 3rd
-  String[] hangmanTorsoA =    {" ", " ", " ", " ", " ", "|", " ", " ", "  ", "|", "  ", " ", " "}; //switches at 4th
-  String[] hangmanTorsoB =    {" ", " ", " ", " ", " ", "|", " ", "  ", "_", "|", "_", "  ", " "}; //switches at 5th
-  String[] hangmanLeftArmA =  {" ", " ", " ", " ", " ", "|", " ", " ", "/ ", "|", "  ", " ", " "}; //switches at 4th
-  String[] hangmanLeftArmb =  {" ", " ", " ", " ", " ", "|", " ", "/ ", "_", "|", "_", "  ", " "}; //switches at 5th
-  String[] hangmanRightArmA = {" ", " ", " ", " ", " ", "|", " ", " ", "/ ", "|", " \\", " ", " "};//switches at 4th
-  String[] hangmanRightArmB = {" ", " ", " ", " ", " ", "|", " ", "/ ", "_", "|", "_", " \\ ", " "};//switches at 5th
-  String[] hangmanLeftLegA =  {" ", " ", " ", " ", " ", "|", " ", " ", "/ ", " ", "   ", " ", " "};//switches at 6th
-  String[] hangmanLeftLegB =  {" ", " ", " ", " ", " ", "|", " ", "/ ", " ", " ", " ", "   ", " "};//switches at 7th
-  String[] hangmanLeftLegC =  {" ", " ", " ", " ", " ", "|", "/ ", " ", " ", " ", " ", " ", "   "};//switches at 8th
-  String[] hangmanRightLegA = {" ", " ", " ", " ", " ", "|", " ", " ", "/ ", " ", " \\", " ", " "};//switches at 6th
-  String[] hangmanRightLegB = {" ", " ", " ", " ", " ", "|", " ", "/ ", " ", " ", " ", " \\", " "};//switches at 7th
-  String[] hangmanRightLegC = {" ", " ", " ", " ", " ", "|", "/ ", " ", " ", " ", " ", " ", " \\"};//switches at 8th
-  */
+    
     if(!correctGuess){
       
       if(guessChances == GUESSES_MINUS_1){
