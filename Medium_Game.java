@@ -179,7 +179,15 @@ public class Medium_Game{
     if(complete){displayWon();}
   
 
-    //return to main menu.
+    //FileIO and return to main menu.
+    ProjectFileIO_v2.saveStats(userName, score);
+    
+    if (!userName.equals("")) {
+      Menu.menu(userName);
+    }
+    else {
+      Menu.menu();
+    }
     
     
   }//end runGame

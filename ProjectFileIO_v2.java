@@ -462,6 +462,7 @@ public class ProjectFileIO_v2 {
 
     // Save stats at end of game
     public static void saveStats(String userName, int score) {
+        
         // If user is signed in already 
         if (!userName.equals("")) { 
             updateHighScore(userName, score); 

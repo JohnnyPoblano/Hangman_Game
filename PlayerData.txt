@@ -16,7 +16,7 @@ pw123
 john
 jjjjjj
 55
-1
+2
 ===== Player#2 =====
 test
 000000
