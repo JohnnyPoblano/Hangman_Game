@@ -17,4 +17,9 @@ john
 jjjjjj
 55
 1
+===== Player#2 =====
+test
+000000
+0
+0
 --- End of File ---

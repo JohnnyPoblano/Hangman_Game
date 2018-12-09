@@ -186,49 +186,46 @@ public class Medium_Game{
   
 //__THEME ARRAY MANIPULATION METHODS_________________________________________________________________
   
-  public void initializeThemeArray(){
-    // THIS STUFF IS FOR TESTING______________
-    //5-7 word length
-    if(theme == 0){
-      
-      /*
-      list.add("AIOUY");
-      list.add("AT");
-      list.add("IF");
-      list.add("NO");
-      list.add("SO");
-      list.add("FOR");
-      list.add("YES");
-      list.add("NEW");
-      list.add("PAT");
-      list.add("CAT");
-      list.add("SAT");
-      list.add("SIT");
-      list.add("TOP");
-      list.add("PUT");
-      list.add("BUT");
-      list.add("BAIN");
-      list.add("PAIN");
-      list.add("BANE");
-      list.add("TAME");
-      list.add("LAME");
-      list.add("NEWS");
-      */
-      //list = ProjectFileIO_v2.getDictionary("EnglishWordList.txt");
-      
-    }
-    //_________________________________________
-    
-    if(theme == 1){
-      list = ProjectFileIO_v2.getDictionary("FantasyWordList.txt");
-    }
-    if(theme == 2){
-      list = ProjectFileIO_v2.getDictionary("SciFiWordList.txt");
-    }
-    if(theme == 3){
-      list = ProjectFileIO_v2.getDictionary("WesternWordList.txt");
-    }
-  }//end initializeThemeArray
+public void initializeThemeArray(){
+  // THIS STUFF IS FOR TESTING______________
+ if(theme == 1){
+   
+   /*
+   list.add("TO");
+   list.add("AT");
+   list.add("IF");
+   list.add("NO");
+   list.add("SO");
+   list.add("FOR");
+   list.add("YES");
+   list.add("NEW");
+   list.add("PAT");
+   list.add("CAT");
+   list.add("SAT");
+   list.add("SIT");
+   list.add("TOP");
+   list.add("PUT");
+   list.add("BUT");
+   list.add("BAIN");
+   list.add("PAIN");
+   list.add("BANE");
+   list.add("TAME");
+   list.add("LAME");
+   list.add("NEWS");
+   */
+   list = ProjectFileIO_v2.getDictionary("EnglishWordListNoDup.txt");
+   
+ }
+ if(theme == 2){
+   list = ProjectFileIO_v2.getDictionary("WesternWordListNoDup.txt");
+ }
+ if(theme == 3){
+   list = ProjectFileIO_v2.getDictionary("SciFiWordListNoDup.txt");
+ }
+ if(theme == 4){
+   list = ProjectFileIO_v2.getDictionary("FantasyWordListNoDup.txt");;
+ }
+}//end initializeThemeArray
   
   
 //__SETTERS__________________________________________________________________________________________

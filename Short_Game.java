@@ -169,7 +169,7 @@ public class Short_Game{
   
   public void initializeThemeArray(){
      // THIS STUFF IS FOR TESTING______________
-    if(theme == 0){
+    if(theme == 1){
       
       /*
       list.add("TO");
@@ -194,19 +194,17 @@ public class Short_Game{
       list.add("LAME");
       list.add("NEWS");
       */
-      list = ProjectFileIO_v2.getDictionary("EnglishWordList.txt");
+      list = ProjectFileIO_v2.getDictionary("EnglishWordListNoDup.txt");
       
     }
-    //_________________________________________
-    
-    if(theme == 1){
-      list = ProjectFileIO_v2.getDictionary("FantasyWordList.txt");
-    }
     if(theme == 2){
-      list = ProjectFileIO_v2.getDictionary("SciFiWordList.txt");
+      list = ProjectFileIO_v2.getDictionary("WesternWordListNoDup.txt");
     }
     if(theme == 3){
-      list = ProjectFileIO_v2.getDictionary("WesternWordList.txt");
+      list = ProjectFileIO_v2.getDictionary("SciFiWordListNoDup.txt");
+    }
+    if(theme == 4){
+      list = ProjectFileIO_v2.getDictionary("FantasyWordListNoDup.txt");;
     }
   }//end initializeThemeArray
   
