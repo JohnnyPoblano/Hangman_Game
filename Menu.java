@@ -48,6 +48,7 @@
 
                     // Start game
                     Short_Game game = new Short_Game(s2, "");
+                    prettyTitle(s2);
                     game.runGame();
                 }  
                 else if(s1.equals("2")) { 
@@ -60,6 +61,7 @@
                        
                     // Start game
                     Medium_Game game = new Medium_Game(s2, "");
+                    prettyTitle(s2);
                     game.runGame();
                 }  
                 else if(s1.equals("3")) { 
@@ -72,6 +74,7 @@
 
                     // Start game
                     Long_Game game = new Long_Game(s2, "");
+                    prettyTitle(s2);
                     game.runGame();
                 }  
                 else if(s1.equals("6")){ 
@@ -145,6 +148,7 @@
 
                     // Start game
                     Short_Game game = new Short_Game(s2, username);
+                    prettyTitle(s2);
                     game.runGame();
                 }  
                 else if(s1.equals("2")) { 
@@ -157,6 +161,7 @@
                     
                     // Start game
                     Medium_Game game = new Medium_Game(s2, username);
+                    prettyTitle(s2);
                     game.runGame();
                 }  
                 else if(s1.equals("3")) { 
@@ -169,6 +174,7 @@
                     
                     // Start game
                     Long_Game game = new Long_Game(s2, username);
+                    prettyTitle(s2);
                     game.runGame();
                 }  
                 else if(s1.equals("6")){ 
@@ -193,5 +199,76 @@
                 }
  
             }//end of logged in menu method 
+
+            private static void prettyTitle(int i){
+   // This will print out some pretty title bars for the game style
+   String base = 
+   "     __...--~~~~~-._   _.-~~~~~--...__          .-. | | | \n" +
+   "    //   ENGLISH     `V'  WORDS        \\\\       |M|_|A|N|\n" +
+   "   //                 |                 \\\\      |A|a|.|.|<\\ \n" +
+   "  //__...--~~~~~~-._  |  _.-~~~~~~--...__\\\\     |T|r| | | \\\\  \n" +
+   " //__.....----~~~~._\\ | /_.~~~~----.....__\\\\    |H|t|M|Z|  \\\\  \n" +
+   " ====================\\\\|//====================  | |!| | |   \\> \n" +
+   "                     `---`	\n" +
+   "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ \n";
+
+        String west = "";
+        west = ".-'` |___________WESTERN___________________________________////// \n" +
+        "`'-._|                                                    \\\\\\\\\\\\	 \n" +
+        
+        "           x        +               (')) ^v^  _           (`)_   \n" +
+        ".-. _______|        A               (__)_) ,--j j-------, (__)_)  \n" +
+        "|=|/     /  \\      /\\-\\	                /_.-.___.-.__/ \\		  \n" +
+        "| |_____|_\"\"_|    _||\\\"\\|\\_            ,8| [_],-.[_] | oOo	\n" +
+        "|_|_[X]_|____|   ~^~^~^~^          ,,,oO8|_o8_|_|_8o_|&888o,,,\n" +
+        "        _       _         _____        							\n" +
+        "     _-(_)-  _-(_)-   ^..^     \\9								\n" +
+        "   `(___)  `(___)     (oo)_____/                 |---|---|---|---|  \n" +
+        "    // \\\\   // \\\\        WW  WW		         |---|---|---|---|  \n" +
+        "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ \n";
+
+        String scifi = "";
+         scifi = "   SPACE        +  .        _      .-.         .^.  \n" +
+         "          |       3==({)_    .    (   \\        | |            ___ \n" +
+         "+  .     -o-      _  )`\\-|      *  )   \\      |^^^| + .     ,',.('\n" +
+         "      .   |      /_`' // |\\     .-'     `-----|O==|.  *    :  `'    \n" +
+         ".               B'/`-'M\\_| )   /       .      |===|  +  .  :) _  ( \n" +
+         "    . *        //       (     /      .        |===|   .  '  `:_)_, \n" +
+         "              B'         `-'''              /.[__N].\\   \n" ;
+      
+        
+       String fantasy = "";
+        fantasy = "               />__________________________________________________ \n" +
+        "[OOOOOOOOOOOOO[]________FANTASY____________________________________> \n" +
+        "               \\>  \n" +
+        "  | 	                 |>>>                        |>>>  \n" +
+        "  |                  _  _|_  _                   _  _|_  _\n" +
+        "  + \\               | |_| |_| |                 | |_| |_| | \n" +
+        "  \\\\.G_.*=.         \\  .      /                 \\ .    .  /\n" +
+        "   `(#'/.\\|          \\    ,  /                   \\    .  / \n" +
+        "    .>' (_--.         | .   |_   _   _   _   _   _| ,   |\n" +
+        " _=/d   ,^\\           |    .| |_| |_| |_| |_| |_| |  .  |  \n" +
+        "~~ \\)-'   '   _---~   |     |  .   /+++++++\\    . | .   | \n" +
+        "   / |                |.    | .    |+++++++| .    |   . |  \n" +
+        "  '  '     ____--`~   '--~~__ .    |++++ __|----~    ~`---, \n" +
+        "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n" ;
+      ////////////////////////////////////////////////////////////////////////////  
+
+      if(i == 1){
+        System.out.print(base);
+      }
+       if(i == 2) {
+        System.out.print(west);
+      } 
+       if(i == 3) {
+        System.out.print(scifi);
+       }
+       if(i == 4){
+        System.out.print(fantasy);
+       }
+
+                
+
+            }
 
         }
