@@ -15,8 +15,8 @@ pw123
 ===== Player#1 =====
 john
 jjjjjj
-55
-2
+315
+8
 ===== Player#2 =====
 test
 000000

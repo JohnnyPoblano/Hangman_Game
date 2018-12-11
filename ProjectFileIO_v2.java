@@ -373,13 +373,13 @@ public class ProjectFileIO_v2 {
     public static void displayTopTen() {
         ArrayList<Player> topTen = new ArrayList<Player>();
         topTen = getTopTen();
-        System.out.println("********************************");
-        System.out.println("           High Scores          ");
-        System.out.println("********************************");
-        System.out.println("Player                     Score");
-        System.out.println("********************************");
+        System.out.println("*************************************************");
+        System.out.println("        |      High Scores       |               ");
+        System.out.println("*************************************************");
+        System.out.println("Player  |                  Score |   Times Played");
+        System.out.println("*************************************************");
         for (int i = 0; i < topTen.size(); i++) {
-            System.out.printf("%-16s%16d", topTen.get(i).getName(), topTen.get(i).getHighScore());
+            System.out.printf("%-16s%16d%16d", topTen.get(i).getName(), topTen.get(i).getHighScore(), topTen.get(i).getNumberOfTimesPlayed());
             System.out.println();
         }
     }
@@ -460,16 +460,15 @@ public class ProjectFileIO_v2 {
         }
     }
 
-    // Save stats at end of game
-    public static void saveStats(String userName, int score) {
-        
+    // Save stats at end of game (Returns username)
+    public static String saveStats(String userName, int score) {
         // If user is signed in already 
         if (!userName.equals("")) { 
             updateHighScore(userName, score); 
         } 
         
         // If user is not signed in 
-        else { 
+        else {
             boolean wantsToSignIn = IR4.getYorN("Do you want to sign in / create an account to save your score? (Y/N)"); 
             if (wantsToSignIn) { 
                 userName = runPlayerLogin();
@@ -481,6 +480,8 @@ public class ProjectFileIO_v2 {
                 updateHighScore(userName, score);
             } 
         }
+
+        return userName;
     }
     
 }

@@ -188,7 +188,7 @@ public class Long_Game{
   
 
     //FileIO and return to main menu.
-    ProjectFileIO_v2.saveStats(userName, score);
+    userName = ProjectFileIO_v2.saveStats(userName, score);
     
     if (!userName.equals("")) {
       Menu.menu(userName);
