@@ -79,7 +79,8 @@
                 }  
                 else if(s1.equals("6")){ 
                     System.out.println("Thank you for playing Hangman!!!"); 
-                    return; // Exit program
+                  
+                    return;
                 } 
                  
                 //Call highScores (Display top ten)
