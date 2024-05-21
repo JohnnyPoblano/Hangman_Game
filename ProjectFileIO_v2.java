@@ -6,7 +6,7 @@ import java.util.*;
 
 public class ProjectFileIO_v2 {
     //Global Constants
-    private static String FILE_NAME = "FileTest-1.txt";
+    private static String FILE_NAME = "PlayerData.txt";
     
     private static String EOF_MARKER             = "-";
     private static String PLAYER_MARKER          = "=";
@@ -373,13 +373,13 @@ public class ProjectFileIO_v2 {
     public static void displayTopTen() {
         ArrayList<Player> topTen = new ArrayList<Player>();
         topTen = getTopTen();
-        System.out.println("********************************");
-        System.out.println("           High Scores          ");
-        System.out.println("********************************");
-        System.out.println("Player                     Score");
-        System.out.println("********************************");
+        System.out.println("*************************************************");
+        System.out.println("        |      High Scores       |               ");
+        System.out.println("*************************************************");
+        System.out.println("Player  |                  Score |   Times Played");
+        System.out.println("*************************************************");
         for (int i = 0; i < topTen.size(); i++) {
-            System.out.printf("%-16s%16d", topTen.get(i).getName(), topTen.get(i).getHighScore());
+            System.out.printf("%-16s%16d%16d", topTen.get(i).getName(), topTen.get(i).getHighScore(), topTen.get(i).getNumberOfTimesPlayed());
             System.out.println();
         }
     }
@@ -409,7 +409,14 @@ public class ProjectFileIO_v2 {
 
         } catch (FileNotFoundException e) {
             System.out.println("File not found exception: " + e.getMessage());    
-        } 
+        }
+
+        // Make all letters in all words capital
+        for (int i = 0; i < WordArrayList.size(); i++) {
+            String temp = WordArrayList.get(i);
+            temp = temp.toUpperCase();
+            WordArrayList.set(i, temp);
+        }
 
         return WordArrayList;
     }
@@ -442,12 +449,39 @@ public class ProjectFileIO_v2 {
             player.setHighScore(score);
         }
 
+        // Increment play count
+        player.setNumberOfTimesPlayed(player.getNumberOfTimesPlayed()+1);
+
         // Write file
         try {
             writeFile();
         } catch(IOException io) {
             System.out.println("IOException " + io.getMessage());
         }
+    }
+
+    // Save stats at end of game (Returns username)
+    public static String saveStats(String userName, int score) {
+        // If user is signed in already 
+        if (!userName.equals("")) { 
+            updateHighScore(userName, score); 
+        } 
+        
+        // If user is not signed in 
+        else {
+            boolean wantsToSignIn = IR4.getYorN("Do you want to sign in / create an account to save your score? (Y/N)"); 
+            if (wantsToSignIn) { 
+                userName = runPlayerLogin();
+                // Calls save stats again if incorrect login
+                if (userName.equals("")) {
+                    saveStats(userName, score);
+                }
+
+                updateHighScore(userName, score);
+            } 
+        }
+
+        return userName;
     }
     
 }
